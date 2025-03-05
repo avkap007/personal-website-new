@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "image": "/images/highlights/design-thinking.webp",
+      "title": "Design Thinking Workshop",
+      "description": "Hosted a design thinking workshop for Google Developers' Club.",
+      "resources": [
+      {
+        "type": "Slides",
+        "url": "https://www.figma.com/slides/SnyZakNKL5aliURVRqB9R3/Hack-the-sem_Design-Thinking-Slides?node-id=1-70&t=ANncrjB6P6hI6xhT-1"
+      }
+      ]
+    },
+    {
+      "id": 2,
+      "image": "/images/highlights/flui-win-main.webp",
+      "title": "Hackathon Win",
+      "description": "Won 1st place at XYZ Hackathon for building a cool AI app."
+    },
+    {
+      "id": 3,
+      "image": "/images/highlights/ghc.webp",
+      "title": "FAS x WiCS GHC Scholarship Receipients",
+      "description": "Spoke about user-centric design at Dev Summit 2025."
+    },
+    {
+        "id": 5,
+        "image": "/images/highlights/ghc-solo.webp",
+        "title": "FAS x WiCS GHC Scholarship Receipients",
+        "description": "Spoke about user-centric design at Dev Summit 2025."
+      },
+      {
+        "id": 4,
+        "image": "/images/highlights/trycatch24.webp",
+        "title": "Speaker at Dev Conference",
+        "description": "Spoke about user-centric design at Dev Summit 2025."
+      },
+      {
+        "id": 6,
+        "image": "/images/highlights/trycatch23.webp",
+        "title": "Speaker at Dev Conference",
+        "description": "Spoke about user-centric design at Dev Summit 2025."
+      },
+      {
+        "id": 7,
+        "image": "/images/highlights/vsw-24.webp",
+        "title": "Speaker at Dev Conference",
+        "description": "Spoke about user-centric design at Dev Summit 2025."
+      },
+      {
+        "id": 8,
+        "image": "/images/highlights/blueprintfall24.webp",
+        "title": "Speaker at Dev Conference",
+        "description": "Spoke about user-centric design at Dev Summit 2025."
+      }
+  ]
+  

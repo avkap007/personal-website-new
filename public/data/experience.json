@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "category": "Work",
+    "logo": "/images/experience/worksafebc_logo.jpeg",
+    "title": "Technial Product Management Intern @ Company",
+    "subtitle": "Jan 2025 - Pres • Prevention Services Department",
+    "details": [
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Work",
+    "logo": "/images/experience/copilot-ai-logo.jpeg",
+    "title": "Data Analyst @ CoPilot AI",
+    "subtitle": "Sept 2024 - Dec 2024 • Worked on AI-driven product strategy & UX improvements.",
+    "details": [
+      "Partnered with Growth Marketing, Product, and Design teams to analyze user behavior trends, providing insights that optimized onboarding flows and increased activation rates by 15%.",
+      "Built automated dashboards in Snowflake and Tableau, to track key business metrics, reducing manual reporting time by 30% and improving decision-making speed across teams."
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Work",
+    "logo": "/images/experience/copilot-ai-logo.jpeg",
+    "title": "Associate Product Management Intern @ CoPilot AI",
+    "subtitle": "Jan 2024 - Aug 2024 • Worked on AI-driven product strategy & UX improvements.",
+    "details": [
+      "Launched a user blocklist management feature: Conducted 20+ user interviews and iterative A/B tests to validate the solution, reducing unwanted interactions by 52% and saving ~$115K annually in operational costs.",
+      "Integrated AI-driven meeting tracking and sentiment analysis: Collaborated with engineering and design to deliver the feature, increasing the North Star Metric by 26% and driving measurable user engagement growth.",
+      "Streamlined account migrations: Designed and deployed an intuitive dashboard, cutting engineering overhead by 20% and reducing miscategorized issues by 40%, preventing ~$140K in potential losses."
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Work",
+    "logo": "/images/experience/decoda-logo.jpeg",
+    "title": "Program Assistant @ Decoda Literacy Solutions",
+    "subtitle": "Managed a provincial literacy program.",
+    "details": [
+      "Coordinated program logistics and communications.",
+      "Developed program evaluation metrics.",
+      "Managed relationships with program partners."
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Community",
+    "logo": "/images/experience/blueprint-logo.webp",
+    "title": "Co-President @ SFU Blueprint",
+    "subtitle": "Led pro-bono tech projects for nonprofits.",
+    "details": [
+      "Managed teams working on tech solutions for non-profits.",
+      "Organized networking & mentorship events.",
+      "Oversaw project scoping and execution."
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Research",
+    "logo": "/images/experience/rosie_lab.png",
+    "title": "Web developer & Research Assistant @ Rosie Robotics Lab",
+    "subtitle": "Investigated AI & human cognition.",
+    "details": [
+      "Developed a React-based validation tool with AWS and DynamoDB, automating the verification of 3,000+ audio files and improving dataset accuracy for emotion classification models.",
+      "Conducted data annotation and ASR model fine-tuning (Whisper Large, Wav2Vec 2.0) to enhance speech-to-text transcription, reducing Word Error Rate (WER) and Character Error Rate (CER) while improving model robustness."
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Research",
+    "logo": "/images/experience/cogsjournaltemplogo.png",
+    "title": "Incoming Editor in Chief @  Canadian Undergraduate Journal of Cognitive Science",
+    "subtitle": "Investigated AI & human cognition.",
+    "details": [
+      "Conducted literature reviews and case studies.",
+      "Explored data leverage strategies for AI ethics.",
+      "Presented findings at a university research conference."
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Community",
+    "logo": "/images/experience/cogs.png",
+    "title": "President @ Cognitive Science Student Society",
+    "subtitle": "Investigated AI & human cognition.",
+    "details": [
+      "Conducted literature reviews and case studies.",
+      "Explored data leverage strategies for AI ethics.",
+      "Presented findings at a university research conference."
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Community",
+    "logo": "/images/experience/wics.png",
+    "title": "Technical Events Executive @ Women in Computing Science",
+    "subtitle": "Investigated AI & human cognition.",
+    "details": [
+      "Conducted literature reviews and case studies.",
+      "Explored data leverage strategies for AI ethics.",
+      "Presented findings at a university research conference."
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Community",
+    "logo": "/images/experience/vsw-logo.jpeg",
+    "title": "Social Media Coordinator @ Vancoucer Startup Week",
+    "subtitle": "Investigated AI & human cognition.",
+    "details": [
+      "Conducted literature reviews and case studies.",
+      "Explored data leverage strategies for AI ethics.",
+      "Presented findings at a university research conference."
+    ]
+  },
+  {
+    "id": 11,
+    "category": "Community",
+    "logo": "/images/experience/trycatch24.png",
+    "title": "Committee Chair @ Try/Catch 24",
+    "subtitle": "Investigated AI & human cognition.",
+    "details": [
+      "Conducted literature reviews and case studies.",
+      "Explored data leverage strategies for AI ethics.",
+      "Presented findings at a university research conference."
+    ]
+  }
+
+]

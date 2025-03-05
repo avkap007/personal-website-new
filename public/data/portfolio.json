@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "title": "Rufus Guitar Shop Redesign - FLUI Hackathon",
+    "date": "Feb 2025",
+    "tags": ["Figma", "After Effects"],
+    "description": "🏆 1st Prize at FLUI Hackathon 2025 – Led the redesign of Rufus Guitar Shop’s digital experience, enhancing product discovery and e-commerce navigation. Conducted user interviews, built high-fidelity Figma prototypes, and integrated motion design for better engagement.",
+    "image": "/images/portfolio/flui-slide.webp",
+    "link": "https://www.youtube.com/watch?v=_sr4xQZiCWQ&t=61s"
+  },
+
+  {
+    "id": 2,
+    "title": "Borrowhood - nwHACKS 2025",
+    "date": "Jan 2025",
+    "tags": ["Frontend", "Design"],
+    "description": "Borrowhood is a communal rental platform that allows users to list items for borrowing, exchange, or lending. Built for nwHACKS 2025",
+    "image": "/images/portfolio/borrowhood-portfolio.webp",
+    "link": "https://devpost.com/software/borrowhood"
+  },
+  {
+    "id": 3,
+    "title": "AI Tutor: CodeMentor AI",
+    "date": "Sept 2023",
+    "tags": ["React", "Steamship", "CodeX API"],
+    "description": "Developed a code learning platform using React.js, Python, Steamship, and Codex APIs, featuring code compilation and AI tutors.",
+    "image": "/images/portfolio/codementorai.png",
+    "link": "https://github.com/gursewaktut/TeamPines"
+  },
+  {
+    "id": 4,
+    "title": "Next Read: Book Recommender System",
+    "date": "May 2023",
+    "tags": ["Pandas", "Scikit-learn", "Streamlit"],
+    "description": "Developed a Book Recommender System, employing Python and Scikit-Learn's k-NN for precise item-based filtering, enhancing recommendation quality.",
+    "image": "/images/portfolio/bookrecommender.png",
+    "link": "https://github.com/avkap007/book_recommender"
+  }
+]
