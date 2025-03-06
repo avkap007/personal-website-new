@@ -18,7 +18,7 @@ export default function Experience() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [open, setOpen] = useState<number | null>(null);
 
-  const categories = ["All", "Work", "Community", "Research"];
+  const categories = ["Work", "Community", "Research","All"];
 
   useEffect(() => {
     fetch("/data/experience.json")
