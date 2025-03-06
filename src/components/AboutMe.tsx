@@ -59,7 +59,7 @@ export default function AboutMe() {
           {/* Front Side */}
           <div className="flip-card-front">
             <Image
-              src="/my-notion-face-portrait.png"
+              src="/my-notion-face-transparent.png"
               alt="Avni Kapoor"
               layout="fill"
               className="w-full h-full object-cover rounded-2xl"
@@ -69,7 +69,7 @@ export default function AboutMe() {
           {/* Back Side */}
           <div className="flip-card-back">
             <Image
-              src="/my-notion-face-transparent.png"
+              src="/images/profilepic.png"
               alt="Avni Kapoor Back"
               layout="fill"
               className="w-full h-full object-cover rounded-2xl"
