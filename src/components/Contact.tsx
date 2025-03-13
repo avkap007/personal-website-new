@@ -25,16 +25,13 @@ export default function Contact() {
           <h2 className="text-3xl font-bold mb-4">Let’s Connect</h2>
           <p className="text-gray-400 mb-6">Reach out through my socials or drop a message!</p>
           <div className="flex space-x-6 text-2xl">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
+            <a href="https://www.linkedin.com/in/avni-kapoor/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
               <FaLinkedin />
             </a>
-            <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
+            <a href="https://github.com/avkap007" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
               <FaGithub />
             </a>
-            <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition">
-              <FaInstagram />
-            </a>
-            <a href="mailto:your@email.com" className="hover:text-gray-400 transition">
+            <a href="mailto:avnikapooedu@gmail.com" className="hover:text-gray-400 transition">
               <FaEnvelope />
             </a>
           </div>

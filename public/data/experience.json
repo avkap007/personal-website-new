@@ -36,7 +36,7 @@
     "category": "Work",
     "logo": "/images/experience/decoda-logo.jpeg",
     "title": "Program Assistant @ Decoda Literacy Solutions",
-    "subtitle": "Managed a provincial literacy program.",
+    "subtitle": "Assisted program manager in managing an IRCC-funded provincial literacy program.",
     "details": [
       "Coordinated program logistics and communications.",
       "Developed program evaluation metrics.",
@@ -48,11 +48,10 @@
     "category": "Community",
     "logo": "/images/experience/blueprint-logo.webp",
     "title": "Co-President @ SFU Blueprint",
-    "subtitle": "Led pro-bono tech projects for nonprofits.",
+    "subtitle": "Blueprint is an international student-run organization that provides tech solutions to non-profits pro-bono.",
     "details": [
-      "Managed teams working on tech solutions for non-profits.",
-      "Organized networking & mentorship events.",
-      "Oversaw project scoping and execution."
+      "Spearheaded four major tech projects, leading scoping and user research with 120+ participants, delivering 85% of the feature set and achieving high satisfaction.",
+      "Established product management processes in Blueprint, including ticketing, mentoring new PMs, and creating documentation, boosting project delivery timelines by 30%."
     ]
   },
   {
@@ -60,7 +59,7 @@
     "category": "Research",
     "logo": "/images/experience/rosie_lab.png",
     "title": "Web developer & Research Assistant @ Rosie Robotics Lab",
-    "subtitle": "Investigated AI & human cognition.",
+    "subtitle": "Built and investigated ASR datasets leading to a publication.",
     "details": [
       "Developed a React-based validation tool with AWS and DynamoDB, automating the verification of 3,000+ audio files and improving dataset accuracy for emotion classification models.",
       "Conducted data annotation and ASR model fine-tuning (Whisper Large, Wav2Vec 2.0) to enhance speech-to-text transcription, reducing Word Error Rate (WER) and Character Error Rate (CER) while improving model robustness."
@@ -71,11 +70,8 @@
     "category": "Research",
     "logo": "/images/experience/cogsjournaltemplogo.png",
     "title": "Incoming Editor in Chief @  Canadian Undergraduate Journal of Cognitive Science",
-    "subtitle": "Investigated AI & human cognition.",
+    "subtitle": "Overseeing the publication process and guiding the journal’s research direction.",
     "details": [
-      "Conducted literature reviews and case studies.",
-      "Explored data leverage strategies for AI ethics.",
-      "Presented findings at a university research conference."
     ]
   },
   {
@@ -83,11 +79,11 @@
     "category": "Community",
     "logo": "/images/experience/cogs.png",
     "title": "President @ Cognitive Science Student Society",
-    "subtitle": "Investigated AI & human cognition.",
+    "subtitle": "Elected with 90% confidence.",
     "details": [
-      "Conducted literature reviews and case studies.",
-      "Explored data leverage strategies for AI ethics.",
-      "Presented findings at a university research conference."
+      "Led a team of 10 executives and 30 volunteers.",
+      "Organized 10+ events, including a research conference.",
+      "Managed the working budget for the soceity and journal."
     ]
   },
   {
@@ -95,7 +91,7 @@
     "category": "Community",
     "logo": "/images/experience/wics.png",
     "title": "Technical Events Executive @ Women in Computing Science",
-    "subtitle": "Investigated AI & human cognition.",
+    "subtitle": "",
     "details": [
       "Conducted literature reviews and case studies.",
       "Explored data leverage strategies for AI ethics.",
