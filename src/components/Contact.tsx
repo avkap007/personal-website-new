@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
   const [email, setEmail] = useState("");
