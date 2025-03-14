@@ -1,4 +1,4 @@
-import { a } from 'framer-motion/client';
+// import { a } from 'framer-motion/client';
 
 /** @type {import('postcss-load-config').Config} */
 const config = {
@@ -9,3 +9,10 @@ const config = {
 };
 
 export default config;
+// /** @type {import('postcss-load-config').Config} */
+// module.exports = {
+//   plugins: {
+//     tailwindcss: {},
+//     autoprefixer: {},
+//   },
+// };

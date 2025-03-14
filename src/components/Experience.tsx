@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-// Define the Type for Experiences
 type Experience = {
   id: number;
   category: string;
@@ -15,10 +14,10 @@ type Experience = {
 
 export default function Experience() {
   const [experiences, setExperiences] = useState<Experience[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("Work");
   const [open, setOpen] = useState<number | null>(null);
 
-  const categories = ["Work", "Community", "Research","All"];
+  const categories = ["Work", "Community", "Research", "All"];
 
   useEffect(() => {
     fetch("/data/experience.json")
@@ -29,10 +28,9 @@ export default function Experience() {
 
   return (
     <div className="max-w-[900px] w-full mx-auto px-4">
-      {/* Heading */}
-      <h2 className="text-2xl font-bold text-center mb-6">Experience</h2>
+      <h2 className="text-4xl font-bold text-center mb-6">Experience</h2>
 
-      {/* Category Filters */}
+      {/* Category Tabs */}
       <div className="flex justify-center space-x-3 mb-6">
         {categories.map((category) => (
           <button
@@ -50,7 +48,7 @@ export default function Experience() {
       </div>
 
       {/* Scrollable Experience List */}
-      <div className="min-h-[400px] max-h-[400px] overflow-y-auto space-y-6">
+      <div className="min-h-[400px] max-h-[400px] overflow-y-auto space-y-6 scrollable-container scrollbar-thin scrollbar-thumb-pink-500">
         {experiences
           .filter((exp) => selectedCategory === "All" || exp.category === selectedCategory)
           .map((exp) => (
@@ -68,20 +66,16 @@ export default function Experience() {
   );
 }
 
-// ✅ Standardized Experience Card Component
 const ExperienceCard = ({ exp, open, setOpen }: { exp: Experience; open: number | null; setOpen: (id: number | null) => void }) => (
-  <div className="border p-6 rounded-lg shadow-md bg-pink-200 w-full max-w-[700px] min-w-[600px] flex-grow mx-auto">
+  <div className="border p-6 rounded-lg shadow-md bg-pink-200 w-full max-w-[700px] md:min-w-[600px] mx-auto">
     <button onClick={() => setOpen(open === exp.id ? null : exp.id)} className="w-full flex items-center gap-x-4 flex-wrap">
-      {/* Logo */}
       <Image src={exp.logo} alt={exp.title} width={48} height={48} className="w-12 h-12 object-contain flex-shrink-0" />
 
-      {/* Text Content */}
       <div className="flex-1 min-w-0">
         <h3 className="text-lg font-bold break-words">{exp.title}</h3>
         <p className="text-md text-gray-700">{exp.subtitle}</p>
       </div>
 
-      {/* Dropdown Arrow */}
       <svg
         className={`w-6 h-6 transition-transform ${open === exp.id ? "rotate-180" : ""}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +87,6 @@ const ExperienceCard = ({ exp, open, setOpen }: { exp: Experience; open: number 
       </svg>
     </button>
 
-    {/* Details */}
     {open === exp.id && (
       <ul className="mt-4 px-6 list-disc list-inside text-gray-700 space-y-2">
         {exp.details.map((point, index) => (

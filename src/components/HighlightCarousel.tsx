@@ -34,7 +34,12 @@ export default function HighlightCarousel() {
 
   return (
     <section className="py-10 relative w-full">
-      <h2 className="text-2xl font-bold text-center mb-8">Recent Highlights</h2>
+      <h2 className="text-4xl font-bold text-center mb-4">Recent Highlights</h2>
+      {/* ✅ New byline below heading */}
+      <p className="text-center text-gray-700 text-md max-w-2xl mx-auto mb-8">
+        I do a lot, and pictures are so much more fun to convey the message! <br/> 
+        Here are a few snapshots of what I've been up to recently. 🎞️
+      </p>
 
       <div className="w-full">
         <Swiper

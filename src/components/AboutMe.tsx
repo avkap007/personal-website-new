@@ -6,9 +6,9 @@ import { BsSoundwave } from "react-icons/bs";
 export default function AboutMe() {
   const words = useMemo(
     () => [
-      "Living vicariously, always ideating & creating.",
-      "Exploring tech, product, and storytelling.",
-      "Turning ideas into impactful solutions.",
+      "Living vicariously, ideating & creating 🎨.",
+      "Convincing friends to go to Big Way 🍲.",
+      "Overwhelming myself by picking up a 76th hobby 🎭.",
     ],
     []
   );
@@ -80,39 +80,40 @@ export default function AboutMe() {
 
       {/* About Text */}
       <div className="text-left max-w-2xl">
-        <p className="text-lg italic text-gray-700">Hi! I&apos;m</p>
+        <h1 className="text-3xl md:text-4xl font-extrabold text-writingColor">
+          Hi, Nice to meet you! <br />
+          I'm Avni <span className="text-accent">&lt;3</span>{" "}
+          <span className="text-gray-500 text-lg flex items-center gap-1">
+            <span className="font-normal">pronounciation -</span> 
+            <span className="font-semibold">[uhv-knee]</span>
+            <button
+              onClick={playPronunciation}
+              className="text-accent text-xl hover:text-darkAccent transition"
+            >
+              <BsSoundwave />
+            </button>
+          </span>
+        </h1>
 
-        <div className="flex items-center space-x-2">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-navyBlue">
-            Avni <span className="text-accent">&lt;3</span>{" "}
-            <span className="text-gray-500 text-lg">[uhv-knee]</span>
-          </h1>
-          <button
-            onClick={playPronunciation}
-            className="text-accent text-2xl hover:text-darkAccent transition"
-          >
-            <BsSoundwave />
-          </button>
-        </div>
-
-        <p className="text-md md:text-lg italic text-secondary mt-2">
-          <span className="font-semibold">Product Manager</span> •{" "}
-          <span className="font-semibold">Developer</span> •{" "}
-          <span className="font-semibold">Researcher</span>
+        <p className="text-md md:text-lg text-darkAccent mt-2">
+          I'm a{" "}
+          <span className="font-bold">[Product Manager]</span> •{" "}
+          <span className="font-semibold">[Developer]</span> •{" "}
+          <span className="font-semibold">[Researcher]</span>
         </p>
 
         {/* Typing Animation */}
-        <p className="mt-4 max-w-xl text-lg text-darkAccent leading-relaxed">
-          {text}
+        <p className="mt-4 max-w-xl text-lg text-secondary leading-relaxed">
+          And am always - {text}
           <span className="animate-blink">|</span>
         </p>
 
         {/* Bio Description */}
-        <p className="mt-4 max-w-xl text-med text-navyBlue leading-relaxed">
-          I am a final-year Computing and Cognitive Science student at SFU. 
-          I have experience in Web Development, Product Management, and Data Analysis. 
-          I enjoy building things and am always up to something. Currently, I am actively 
-          looking for new grad roles for 2026 and intern roles for 2025!
+        <p className="mt-4 max-w-xl text-med text-writingColor leading-relaxed">
+          Final-year Computing & Cognitive Science student at SFU.  
+          My goal is to be a builder of products that are intuitive,
+          accessible, and impactful. <br/>
+          I hope this website gives you a glimpse of who I am and what I do - and that then we get to chat!
         </p>
 
         <a

@@ -18,7 +18,7 @@ export default function Contact() {
   };
 
   return (
-    <footer className="bg-pink-200 text-white py-16 px-8 md:px-20">
+    <footer className="bg-accent text-white py-16 px-8 md:px-20">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left: Let's Connect + Socials */}
         <div>
