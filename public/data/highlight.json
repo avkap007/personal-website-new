@@ -1,57 +1,62 @@
 [
-    {
+  {
       "id": 1,
       "image": "/images/highlights/design-thinking.webp",
       "title": "Design Thinking Workshop",
-      "description": "Hosted a design thinking workshop for Google Developers' Club.",
+      "description": "Hosted a design thinking workshop for Google Developers' Club, guiding participants through ideation and problem-solving frameworks.",
       "resources": [
-      {
-        "type": "Slides",
-        "url": "https://www.figma.com/slides/SnyZakNKL5aliURVRqB9R3/Hack-the-sem_Design-Thinking-Slides?node-id=1-70&t=ANncrjB6P6hI6xhT-1"
-      }
+          {
+              "type": "Slides",
+              "url": "https://www.figma.com/slides/SnyZakNKL5aliURVRqB9R3/Hack-the-sem_Design-Thinking-Slides?node-id=1-70&t=ANncrjB6P6hI6xhT-1"
+          }
       ]
-    },
-    {
+  },
+  {
       "id": 2,
       "image": "/images/highlights/flui-win-main.webp",
       "title": "Hackathon Win",
-      "description": "Won 1st place at XYZ Hackathon for building a cool AI app."
-    },
-    {
+      "description": "Won 1st place at FLUI—Emily Carr University's premier design competition—for a website redesign of Rufus Guitar Shop."
+  },
+  {
       "id": 3,
       "image": "/images/highlights/ghc.webp",
-      "title": "FAS x WiCS GHC Scholarship Receipients",
-      "description": "Spoke about user-centric design at Dev Summit 2025."
-    },
-    {
-        "id": 5,
-        "image": "/images/highlights/ghc-solo.webp",
-        "title": "FAS x WiCS GHC Scholarship Receipients",
-        "description": "Spoke about user-centric design at Dev Summit 2025."
-      },
-      {
-        "id": 4,
-        "image": "/images/highlights/trycatch24.webp",
-        "title": "Speaker at Dev Conference",
-        "description": "Spoke about user-centric design at Dev Summit 2025."
-      },
-      {
-        "id": 6,
-        "image": "/images/highlights/trycatch23.webp",
-        "title": "Speaker at Dev Conference",
-        "description": "Spoke about user-centric design at Dev Summit 2025."
-      },
-      {
-        "id": 7,
-        "image": "/images/highlights/vsw-24.webp",
-        "title": "Speaker at Dev Conference",
-        "description": "Spoke about user-centric design at Dev Summit 2025."
-      },
-      {
-        "id": 8,
-        "image": "/images/highlights/blueprintfall24.webp",
-        "title": "Speaker at Dev Conference",
-        "description": "Spoke about user-centric design at Dev Summit 2025."
-      }
-  ]
-  
+      "title": "FAS x WiCS GHC Scholarship Recipients",
+      "description": "Received the FAS x WiCS GHC scholarship to attend the world’s largest women in tech conference, engaging in thought-provoking discussions on AI, ethics, and leadership."
+  },
+  {
+      "id": 5,
+      "image": "/images/highlights/ghc-solo.webp",
+      "title": "Grace Hopper Celebration 2024",
+      "description": "Three days full of inspiring talks, panels, and networking! My next goal: attend as a speaker and share my own insights on stage. 💡"
+  },
+  {
+      "id": 4,
+      "image": "/images/highlights/trycatch24.webp",
+      "title": "Chairing Try/CATCH 2024",
+      "description": "Led the organization of SFU WiCS' flagship conference, Try/CATCH (Computing and Technology Conference for Her), bringing together students and industry leaders for a day of tech, learning, and community.",
+      "resources": [
+          {
+              "type": "Website",
+              "url": "https://trycatch.cs.sfu.ca/"
+          }
+      ]
+  },
+  {
+      "id": 6,
+      "image": "/images/highlights/trycatch23.webp",
+      "title": "Sponsorship Lead for Try/CATCH 2023",
+      "description": "Secured sponsorships from 10+ companies, raising $10,000 to support one of SFU WiCS’ biggest annual events."
+  },
+  {
+      "id": 7,
+      "image": "/images/highlights/vsw-24.webp",
+      "title": "Vancouver Startup Week 2024 Organizing Committee",
+      "description": "Co-led social media strategy for Vancouver Startup Week 2024, a week-long event celebrating Vancouver's thriving startup ecosystem."
+  },
+  {
+      "id": 8,
+      "image": "/images/highlights/blueprintfall24.webp",
+      "title": "Blueprint Fall 2024 Showcase",
+      "description": "Led and facilitated Fall'25 semesters' Demo Day."
+  }
+]
