@@ -50,7 +50,7 @@ export default function Navbar() {
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="absolute top-full w-full bg-white/30 backdrop-blur-md p-4 rounded-lg shadow-md md:hidden"
+          className="absolute top-full w-full bg-primary backdrop-blur-lg p-4 rounded-lg md:hidden"
         >
           <ul className="text-center space-y-2">
             <li><Link href="#about" onClick={() => setIsOpen(false)}>About</Link></li>
