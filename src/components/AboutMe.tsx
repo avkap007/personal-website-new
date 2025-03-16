@@ -70,10 +70,11 @@ export default function AboutMe() {
           {/* Back Side */}
           <div className="flip-card-back">
             <Image
-              src="/images/profilepic.png"
+              src="/profile_face.gif"
               alt="Avni Kapoor Back"
               layout="fill"
               className="w-full h-full object-cover rounded-2xl"
+              unoptimized
             />
           </div>
         </div>
