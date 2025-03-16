@@ -1,68 +1,129 @@
-/* Import IBM Plex Serif from Google Fonts */
+/* Import IBM Plex Serif font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ✅ Apply the IBM Plex Serif font globally */
+/* Apply IBM Plex Serif globally for consistency */
 @layer base {
   body {
     @apply font-serif text-writingColor !important;
   }
 }
 
-/* Existing animations and components remain unchanged */
+/* === Custom Animations & UI Effects === */
+
+/* Blinking Cursor Effect (used in typewriter animations) */
 @keyframes blink {
   50% {
     opacity: 0;
   }
 }
-
 .animate-blink {
   animation: blink 1s infinite;
 }
 
+/* Flip Card Animation for interactive elements */
 .flip-card {
   transform-style: preserve-3d;
   transition: transform 0.7s;
   position: relative;
 }
-
 .group:hover .flip-card {
   transform: rotateY(180deg);
 }
 
+/* Front and back faces of the flip card */
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
 }
-
 .flip-card-back {
   transform: rotateY(180deg);
 }
 
-/* Fix scrollbar background */
+/* === Custom Scrollbar Styling === */
+
+/* Scrollbar width and design */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
+/* Transparent scrollbar track to blend with background */
 ::-webkit-scrollbar-track {
-  background: transparent !important; /* Forces transparency */
+  background: transparent !important;
 }
 
+/* Scrollbar thumb with soft rounded edges */
 ::-webkit-scrollbar-thumb {
-  background: #ffafcc; /* Adjust to match theme */
+  background: #ffafcc; /* Matches theme */
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffc8dd;
+  background: #ffc8dd; /* Lighter shade on hover */
 }
 
-/* Ensure container background is also transparent */
+/* Ensure scrollable sections maintain transparency */
 .scrollable-container {
   background: transparent !important;
+}
+
+/* === Dynamic Background Effects === */
+
+/* Animated Gradient Background with colors that match the Tailwind theme */
+.animated-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Push behind all content */
+  background: linear-gradient(300deg, #FFF6FA, #FFC8DD, #BDE0FE, #A2D2FF);
+  background-size: 220% 220%;
+  animation: gradient-animation 10s ease infinite;
+  opacity: 0.3; /* Slight transparency for subtle effect */
+}
+
+/* Smooth-moving gradient effect */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Subtle grid overlay for texture and depth */
+.animated-lines::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.15) 1px,
+    transparent 1px
+  );
+  background-size: 30px 30px; /* Adjust grid size for better fit */
+  animation: grid-animation 20s linear infinite;
+  z-index: -1;
+  opacity: 0.3; /* Low opacity to avoid overwhelming the design */
+}
+/* Adds slight rotation for a futuristic dynamic effect */
+@keyframes grid-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

@@ -7,8 +7,11 @@ import Contact from "@/components/Contact"; // ✅ Add Contact component
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-primary text-gray-900">
-      <Navbar /> {/*Ensures Navbar appears at the top */}
+    <main className="min-h-screen relative text-gray-900">
+      {/* ✅ Background */}
+      <div className="absolute inset-0 animated-lines"></div>
+
+      <Navbar />
 
       {/* About Me Section */}
       <section id="about" className="flex items-center justify-center">

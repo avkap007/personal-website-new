@@ -51,7 +51,7 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="py-40 flex flex-col md:flex-row items-center justify-center px-12 md:px-20 gap-16 font-serif bg-primary"
+      className="py-40 flex flex-col md:flex-row items-center justify-center px-12 md:px-20 gap-16 font-serif"
     >
       {/* Flip Card Container */}
       <div className="group w-72 h-72 md:w-96 md:h-96 relative">
@@ -59,10 +59,11 @@ export default function AboutMe() {
           {/* Front Side */}
           <div className="flip-card-front">
             <Image
-              src="/my-notion-face-transparent.png"
+              src="/profile_avatar.gif"
               alt="Avni Kapoor"
               layout="fill"
               className="w-full h-full object-cover rounded-2xl"
+              unoptimized
             />
           </div>
 
