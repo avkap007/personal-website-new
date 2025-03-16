@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Avni Kapoor",
-  description: "Welcome to my portfolio!",
+  description: "welcome to my website!",
   icons: {
     icon: "/diagonal.ico",
   },

@@ -27,6 +27,9 @@ export default function Portfolio() {
   return (
     <section className="w-full max-w-5xl mx-auto px-4 py-10">
       <h2 className="text-4xl font-bold text-center mb-6 text-writingColor">Portfolio</h2>
+      <p className="text-center text-gray-700 text-md max-w-2xl mx-auto mb-8">
+      Here’s a showcase of my design, development, and product skills through some projects I’ve worked on recently. 🏗️
+      </p>
 
       {/* Scrollable Portfolio List */}
       <div className="min-h-[650px] max-h-[650px] overflow-y-auto space-y-6 px-2">

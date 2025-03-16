@@ -3,7 +3,8 @@ import AboutMe from "@/components/AboutMe";
 import HighlightCarousel from "@/components/HighlightCarousel";
 import Experience from "@/components/Experience";
 import Portfolio from "@/components/Portfolio";
-import Contact from "@/components/Contact"; // ✅ Add Contact component
+import Contact from "@/components/Contact"; 
+import Footer from "@/components/Footer"; // ✅ Add Footer component
 
 export default function Home() {
   return (
@@ -37,6 +38,9 @@ export default function Home() {
       <section id="contact" className="min-h-screen flex items-center justify-center scroll-mt-20">
         <Contact />
       </section>
+
+      {/* ✅ Footer (Final sign-off message) */}
+      <Footer />
     </main>
   );
 }

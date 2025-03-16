@@ -29,6 +29,10 @@ export default function Experience() {
   return (
     <section className="w-full max-w-5xl mx-auto px-4 py-10">
       <h2 className="text-4xl font-bold text-center mb-6 text-writingColor">Experience</h2>
+      <p className="text-center text-gray-700 text-md max-w-2xl mx-auto mb-8">
+      "A little bit of everything, all at once." <br/>
+      My experiences range from product, development, data to research and community. 🌿
+      </p>
 
       {/* Category Tabs */}
       <div className="flex justify-center space-x-3 mb-6">
