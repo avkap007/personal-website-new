@@ -51,7 +51,7 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-12 md:px-20 gap-16 font-serif bg-primary"
+      className="py-40 flex flex-col md:flex-row items-center justify-center px-12 md:px-20 gap-16 font-serif bg-primary"
     >
       {/* Flip Card Container */}
       <div className="group w-72 h-72 md:w-96 md:h-96 relative">

@@ -27,8 +27,8 @@ export default function Experience() {
   }, []);
 
   return (
-    <div className="max-w-[900px] w-full mx-auto px-4">
-      <h2 className="text-4xl font-bold text-center mb-6">Experience</h2>
+    <section className="w-full max-w-5xl mx-auto px-4 py-10">
+      <h2 className="text-4xl font-bold text-center mb-6 text-writingColor">Experience</h2>
 
       {/* Category Tabs */}
       <div className="flex justify-center space-x-3 mb-6">
@@ -48,7 +48,7 @@ export default function Experience() {
       </div>
 
       {/* Scrollable Experience List */}
-      <div className="min-h-[400px] max-h-[400px] overflow-y-auto space-y-6 scrollable-container scrollbar-thin scrollbar-thumb-pink-500">
+      <div className="min-h-[600px] max-h-[600px] overflow-y-auto space-y-6 scrollbar-thin scrollbar-thumb-pink-500 mx-auto max-w-[700px] px-2">
         {experiences
           .filter((exp) => selectedCategory === "All" || exp.category === selectedCategory)
           .map((exp) => (
@@ -62,7 +62,7 @@ export default function Experience() {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 }
 
