@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { useEffect, useState, useMemo } from "react";
 import { BsSoundwave } from "react-icons/bs";
@@ -6,9 +7,9 @@ import { BsSoundwave } from "react-icons/bs";
 export default function AboutMe() {
   const words = useMemo(
     () => [
-      "Living vicariously, ideating & creating 🎨.",
-      "Convincing friends to go to Big Way 🍲.",
-      "Overwhelming myself by picking up a 76th hobby 🎭.",
+      <span key="1" className="font-emoji">finding ways to fit travel & adventure into my schedule ✈️.</span>,
+      <span key="2" className="font-emoji">convincing friends to go to big way 🍲.</span>,
+      <span key="3" className="font-emoji">picking up yet another hobby 🎭.</span>,
     ],
     []
   );
@@ -34,8 +35,8 @@ export default function AboutMe() {
       }, deletingSpeed);
     } else {
       timeout = setTimeout(() => {
-        setText((prev) => currentWord.slice(0, prev.length + 1));
-        if (text.length === currentWord.length) {
+        setText((prev) => currentWord.props.children.slice(0, prev.length + 1));
+        if (text.length === currentWord.props.children.length) {
           setTimeout(() => setIsDeleting(true), delayBetweenWords);
         }
       }, typingSpeed);
@@ -61,7 +62,7 @@ export default function AboutMe() {
             <Image
               src="/profile_avatar.gif"
               alt="Avni Kapoor"
-              layout="fill"
+              fill
               className="w-full h-full object-cover rounded-2xl"
               unoptimized
             />
@@ -72,7 +73,7 @@ export default function AboutMe() {
             <Image
               src="/profile_face.gif"
               alt="Avni Kapoor Back"
-              layout="fill"
+              fill
               className="w-full h-full object-cover rounded-2xl"
               unoptimized
             />
@@ -84,9 +85,9 @@ export default function AboutMe() {
       <div className="text-left max-w-2xl">
         <h1 className="text-3xl md:text-4xl font-extrabold text-writingColor">
           Hi, Nice to meet you! <br />
-          I'm Avni <span className="text-accent">&lt;3</span>{" "}
+          I'm Avni.{" "}
           <span className="text-gray-500 text-lg flex items-center gap-1">
-            <span className="font-normal">pronounciation -</span> 
+            <span className="italic font-normal">pronunciation -</span> 
             <span className="font-semibold">[uhv-knee]</span>
             <button
               onClick={playPronunciation}
@@ -97,34 +98,38 @@ export default function AboutMe() {
           </span>
         </h1>
 
-        <p className="text-md md:text-lg text-darkAccent mt-2">
-          I'm a{" "}
-          <span className="font-bold">[Product Manager]</span> •{" "}
-          <span className="font-semibold">[Developer]</span> •{" "}
-          <span className="font-semibold">[Researcher]</span>
+        <p className="text-md md:text-lg text-darkAccent mt-2 lowercase">
+          <span className="font-bold">[product manager]</span> •{" "}
+          <span className="text-writingColor">[developer]</span> •{" "}
+          <span className="text-darkAccent">[researcher]</span>
         </p>
 
         {/* Typing Animation */}
-        <p className="mt-4 max-w-xl text-lg text-secondary leading-relaxed">
-          And am always - {text}
+        <p className="mt-4 max-w-xl text-med text-gray-500 leading-relaxed">
+          and am always - {text}
           <span className="animate-blink">|</span>
         </p>
 
-        {/* Bio Description */}
+        {/* Short Intro */}
         <p className="mt-4 max-w-xl text-med text-writingColor leading-relaxed">
-          Final-year Computing & Cognitive Science student at SFU.  
-          My goal is to be a builder of products that are intuitive,
-          accessible, and impactful. <br/>
-          I hope this website gives you a glimpse of who I am and what I do - and that then we get to chat!
+          A final-year computing and cognitive science honours student at Simon Fraser University.
         </p>
 
+        {/* Standalone Mission Statement */}
+        <p className="mt-4 max-w-xl text-lg font-semibold text-writingColor leading-relaxed">
+          My goal is to build <span className="text-darkAccent">intuitive</span>,  
+          <span className="text-darkAccent"> accessible</span>, and  
+          <span className="text-darkAccent"> impactful</span> products.
+        </p>
+
+        {/* Resume Button */}
         <a
           href="/avni-kapoor-resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-4 py-2 rounded-lg text-lg font-lg transition-all bg-accent text-darkAccent hover:bg-darkAccent hover:text-white mt-4 inline-block"
+          className="px-4 py-2 rounded-lg text-med font-medium transition-all bg-accent text-darkAccent hover:bg-darkAccent hover:text-white mt-4 inline-block"
         >
-          View Resume
+          view resume
         </a>
       </div>
     </section>
