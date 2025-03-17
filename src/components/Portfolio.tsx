@@ -29,9 +29,9 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <section id="portfolio" className="w-full max-w-5xl mx-auto px-4 py-20">
+    <section id="portfolio" className="w-full max-w-5xl mx-auto px-8 md:px-20 py-20">
       {/* Section Title */}
-      <h1 className="text-3xl font-extrabold text-center mb-6 text-writingColor">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-center mb-6 text-writingColor">
         Portfolio
       </h1>
 
@@ -39,8 +39,8 @@ export default function Portfolio() {
         Here’s a showcase of my design, development, and product skills through some projects I’ve worked on recently. 🏗️
       </p>
 
-      {/* Project List (No Scrollbox) */}
-      <div className="space-y-12">
+      {/* Project List */}
+      <div className="space-y-10">
         {loading ? (
           <SkeletonLoader />
         ) : (
@@ -64,7 +64,7 @@ export default function Portfolio() {
 const SkeletonLoader = () => (
   <div className="space-y-6">
     {[1, 2, 3].map((key) => (
-      <div key={key} className="h-72 bg-gray-200 animate-pulse rounded-lg w-full max-w-[700px] mx-auto"></div>
+      <div key={key} className="h-48 bg-gray-200 animate-pulse rounded-lg w-full max-w-[600px] mx-auto"></div>
     ))}
   </div>
 );
@@ -82,29 +82,31 @@ const ProjectCard = ({
       reversed ? "md:flex-row-reverse" : ""
     }`}
   >
-    {/* ✅ Clickable Image */}
+    {/* ✅ Clickable Image (Perfect Slide-Like Shape) */}
     <a
       href={project.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-full md:w-[60%] h-[340px] relative rounded-xl overflow-hidden group"
+      className="w-full md:w-[45%] h-[220px] relative rounded-lg overflow-hidden group"
     >
-      <Image
-        src={project.image}
-        alt={project.title}
-        width={720}
-        height={360}
-        className="rounded-xl shadow-md object-cover w-full h-full transition-transform duration-300 transform group-hover:scale-105"
-        loading="lazy"
-      />
+      <div className="w-full h-full rounded-lg overflow-hidden">
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={640}
+          height={360}
+          className="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-105"
+          loading="lazy"
+        />
+      </div>
     </a>
 
-    {/* ✅ Project Details */}
-    <div className="w-full md:w-[55%]">
-      <h3 className="text-2xl font-bold text-writingColor">{project.title}</h3>
+    {/* ✅ Compact Project Details */}
+    <div className="w-full md:w-[50%]">
+      <h3 className="text-xl md:text-xl font-bold text-writingColor">{project.title}</h3>
       <p className="text-darkAccent text-sm italic">{project.date}</p>
 
-      {/* ✅ Consistent Tag Styling (Matches Buttons) */}
+      {/* ✅ Consistent Tag Styling */}
       <div className="flex flex-wrap gap-2 mt-2">
         {project.tags.map((tag, index) => (
           <span
@@ -116,7 +118,7 @@ const ProjectCard = ({
         ))}
       </div>
 
-      <p className="mt-3 text-gray-700 leading-relaxed">
+      <p className="mt-3 text-gray-700 leading-relaxed text-sm md:text-base">
         {project.description}
       </p>
     </div>
