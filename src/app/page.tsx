@@ -25,17 +25,17 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="min-h-screen flex items-center justify-center scroll-mt-20">
+      <section id="experience" className="flex items-center justify-center scroll-mt-20">
         <Experience />
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="min-h-screen flex items-center justify-center scroll-mt-20">
+      <section id="portfolio" className="flex items-center justify-center scroll-mt-20">
         <Portfolio />
       </section>
 
       {/* ✅ Contact Section (Footer-like placement) */}
-      <section id="contact" className="min-h-screen flex items-center justify-center scroll-mt-20">
+      <section id="contact" className="flex items-center justify-center scroll-mt-20">
         <Contact />
       </section>
 

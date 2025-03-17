@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState, useMemo } from "react";
 import { BsSoundwave } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 export default function AboutMe() {
   const words = useMemo(
@@ -123,14 +124,14 @@ export default function AboutMe() {
         </p>
 
         {/* Resume Button */}
-        <a
+        <motion.a
           href="/avni-kapoor-resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-lg text-med font-medium transition-all bg-accent text-darkAccent hover:bg-darkAccent hover:text-white mt-4 inline-block"
         >
           view resume
-        </a>
+        </motion.a>
       </div>
     </section>
   );
