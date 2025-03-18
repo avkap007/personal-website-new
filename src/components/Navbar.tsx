@@ -17,18 +17,18 @@ export default function Navbar() {
         {/* Right Side - Navigation + Contact */}
         <div className="flex items-center space-x-8 text-lg font-medium">
           <nav className="hidden md:flex space-x-8">
-            <Link href="#about" className="hover:text-accent transition">About</Link>
-            <Link href="#experience" className="hover:text-accent transition">Experience</Link>
-            <Link href="#portfolio" className="hover:text-accent transition">Portfolio</Link>
+            <Link href="#about" className="hover:text-accent transition">about</Link>
+            <Link href="#experience" className="hover:text-accent transition">experience</Link>
+            <Link href="#portfolio" className="hover:text-accent transition">portfolio</Link>
           </nav>
 
           {/* Contact Button */}
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.1 }}
-            className="px-4 py-2 rounded-lg text-med font-medium transition-all bg-accent text-darkAccent hover:bg-darkAccent hover:text-white"
+            className="px-4 py-2 rounded-lg text-med font-medium transition-all bg-accent text-darkAccent hover:bg-darkAccent hover:text-white hidden md:inline-block"
           >
-            Contact
+            contact
           </motion.a>
 
           {/* Mobile Menu Button - Wider Lines */}
@@ -53,10 +53,10 @@ export default function Navbar() {
           className="absolute top-full w-full bg-primary backdrop-blur-lg p-4 rounded-lg md:hidden"
         >
           <ul className="text-center space-y-2">
-            <li><Link href="#about" onClick={() => setIsOpen(false)}>About</Link></li>
-            <li><Link href="#experience" onClick={() => setIsOpen(false)}>Experience</Link></li>
-            <li><Link href="#portfolio" onClick={() => setIsOpen(false)}>Portfolio</Link></li>
-            <li><Link href="#contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
+            <li><Link href="#about" onClick={() => setIsOpen(false)}>about</Link></li>
+            <li><Link href="#experience" onClick={() => setIsOpen(false)}>experience</Link></li>
+            <li><Link href="#portfolio" onClick={() => setIsOpen(false)}>portfolio</Link></li>
+            <li><Link href="#contact" onClick={() => setIsOpen(false)}>contact</Link></li>
           </ul>
         </motion.div>
       )}

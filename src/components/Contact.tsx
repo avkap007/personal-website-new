@@ -4,29 +4,37 @@ import { useState } from "react";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
+  const [name, setName] = useState(""); // ✅ New Name State
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim() || !message.trim()) return;
+    if (!name.trim() || !email.trim() || !message.trim()) return; // ✅ Trim whitespace validation
 
     // Use FormSubmit to send the email
     const formData = new FormData();
+    formData.append("name", name); // ✅ Added name field
     formData.append("email", email);
     formData.append("message", message);
 
     try {
-      await fetch("https://formsubmit.co/your-email@example.com", {
+      await fetch("https://formsubmit.co/avnikapooredu@gmail.com", {
         method: "POST",
         body: formData,
       });
 
       setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 3000);
-      setEmail("");
-      setMessage("");
+      
+      // ✅ Delay form reset for better UX
+      setTimeout(() => {
+        setSubmitted(false);
+        setName(""); 
+        setEmail("");
+        setMessage("");
+      }, 3000);
+      
     } catch (error) {
       console.error("Error sending message:", error);
     }
@@ -57,21 +65,37 @@ export default function Contact() {
         <div className="bg-muted p-6 rounded-lg">
           <h2 className="text-xl font-semibold mb-4">write me something nice below :)</h2>
           <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+            
+            {/* ✅ New Name Input */}
+            <input 
+              type="text" 
+              placeholder="your name" 
+              aria-label="Enter your name"
+              value={name} 
+              onChange={(e) => setName(e.target.value)} 
+              required 
+              className="bg-primary text-writingColor px-4 py-2 rounded-md placeholder-darkAccent focus:outline-none focus:ring-2 focus:ring-darkAccent"
+            />
+            
             <input 
               type="email" 
               placeholder="your email" 
+              aria-label="Enter your email"
               value={email} 
               onChange={(e) => setEmail(e.target.value)} 
               required 
-              className="bg-primary text-writingColor px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-darkAccent"
+              className="bg-primary text-writingColor px-4 py-2 rounded-md placeholder-darkAccent focus:outline-none focus:ring-2 focus:ring-darkAccent"
             />
+            
             <textarea 
               placeholder="your message" 
+              aria-label="Enter your message"
               value={message} 
               onChange={(e) => setMessage(e.target.value)} 
               required 
-              className="bg-primary text-writingColor px-4 py-2 h-28 rounded-md focus:outline-none focus:ring-2 focus:ring-darkAccent"
+              className="bg-primary text-writingColor px-4 py-2 h-28 rounded-md placeholder-darkAccent focus:outline-none focus:ring-2 focus:ring-darkAccent"
             />
+            
             <button 
               type="submit" 
               className={`py-2 px-4 rounded-lg font-bold transition-all ${

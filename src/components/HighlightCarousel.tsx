@@ -34,7 +34,7 @@ export default function HighlightCarousel() {
 
   return (
     <section className="py-10 relative w-full">
-      <h1 className="text-3xl font-bold text-center mb-4 text-writingColor">Recent Highlights</h1>
+      <h1 className="text-3xl font-bold text-center mb-4 text-writingColor">recent highlights</h1>
       {/* ✅ New byline below heading */}
       <p className="text-center text-gray-700 text-md max-w-2xl mx-auto mb-8">
         I do a lot, and pictures are so much more fun to convey the message! <br/> 
@@ -46,7 +46,7 @@ export default function HighlightCarousel() {
           modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-          loop={true}
+          loop={highlights.length > 2}
           slidesPerView="auto"
           spaceBetween={20}
           centeredSlides={false}

@@ -66,6 +66,7 @@ export default function AboutMe() {
               fill
               className="w-full h-full object-cover rounded-2xl"
               unoptimized
+              priority
             />
           </div>
 
@@ -77,6 +78,7 @@ export default function AboutMe() {
               fill
               className="w-full h-full object-cover rounded-2xl"
               unoptimized
+              priority
             />
           </div>
         </div>
@@ -85,8 +87,8 @@ export default function AboutMe() {
       {/* About Text */}
       <div className="text-left max-w-2xl">
         <h1 className="text-3xl md:text-4xl font-extrabold text-writingColor">
-          Hi, Nice to meet you! <br />
-          I'm Avni.{" "}
+          hi, nice to meet you! <br />
+          i'm Avni.{" "}
           <span className="text-gray-500 text-lg flex items-center gap-1">
             <span className="italic font-normal">pronunciation -</span> 
             <span className="font-semibold">[uhv-knee]</span>
@@ -113,12 +115,12 @@ export default function AboutMe() {
 
         {/* Short Intro */}
         <p className="mt-4 max-w-xl text-med text-writingColor leading-relaxed">
-          A final-year computing and cognitive science honours student at Simon Fraser University.
+          a final-year computing and cognitive science honours student at Simon Fraser University.
         </p>
 
         {/* Standalone Mission Statement */}
         <p className="mt-4 max-w-xl text-lg font-semibold text-writingColor leading-relaxed">
-          My goal is to build <span className="text-darkAccent">intuitive</span>,  
+          my goal is to build <span className="text-darkAccent">intuitive</span>,  
           <span className="text-darkAccent"> accessible</span>, and  
           <span className="text-darkAccent"> impactful</span> products.
         </p>
@@ -127,10 +129,11 @@ export default function AboutMe() {
         <motion.a
           href="/avni-kapoor-resume.pdf"
           target="_blank"
+          whileHover={{ scale: 1.1 }}
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-lg text-med font-medium transition-all bg-accent text-darkAccent hover:bg-darkAccent hover:text-white mt-4 inline-block"
         >
-          view resume
+          View resume
         </motion.a>
       </div>
     </section>

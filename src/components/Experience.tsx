@@ -34,7 +34,7 @@ export default function Experience() {
     <section id="experience" className="w-full max-w-5xl mx-auto px-4 py-20">
       {/* Section Title */}
       <h1 className="text-3xl font-extrabold text-center mb-6 text-writingColor">
-        Experience
+        experience
       </h1>
 
       {/* Subtitle (Hidden on Mobile) */}

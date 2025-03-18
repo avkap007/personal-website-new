@@ -32,7 +32,7 @@ export default function Portfolio() {
     <section id="portfolio" className="w-full max-w-5xl mx-auto px-8 md:px-20 py-20">
       {/* Section Title */}
       <h1 className="text-3xl md:text-4xl font-extrabold text-center mb-6 text-writingColor">
-        Portfolio
+        portfolio
       </h1>
 
       <p className="text-center text-gray-700 text-md max-w-2xl mx-auto mb-8">
