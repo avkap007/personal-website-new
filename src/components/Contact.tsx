@@ -4,39 +4,23 @@ import { useState } from "react";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
-  const [name, setName] = useState(""); // ✅ New Name State
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name.trim() || !email.trim() || !message.trim()) return; // ✅ Trim whitespace validation
+  const handleValidation = (e: React.FormEvent<HTMLFormElement>) => {
+    const form = e.currentTarget;
+    const newErrors: { [key: string]: string } = {};
 
-    // Use FormSubmit to send the email
-    const formData = new FormData();
-    formData.append("name", name); // ✅ Added name field
-    formData.append("email", email);
-    formData.append("message", message);
+    form.querySelectorAll("input, textarea").forEach((input) => {
+      const inputElement = input as HTMLInputElement;
+      if (!inputElement.checkValidity()) {
+        newErrors[inputElement.name] = inputElement.validationMessage;
+      }
+    });
 
-    try {
-      await fetch("https://formsubmit.co/avnikapooredu@gmail.com", {
-        method: "POST",
-        body: formData,
-      });
+    setErrors(newErrors);
 
-      setSubmitted(true);
-      
-      // ✅ Delay form reset for better UX
-      setTimeout(() => {
-        setSubmitted(false);
-        setName(""); 
-        setEmail("");
-        setMessage("");
-      }, 3000);
-      
-    } catch (error) {
-      console.error("Error sending message:", error);
+    if (Object.keys(newErrors).length > 0) {
+      e.preventDefault(); // ✅ Prevents form submission if errors exist
     }
   };
 
@@ -64,50 +48,65 @@ export default function Contact() {
         {/* Right: Contact Form */}
         <div className="bg-muted p-6 rounded-lg">
           <h2 className="text-xl font-semibold mb-4">write me something nice below :)</h2>
-          <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-            
-            {/* ✅ New Name Input */}
-            <input 
-              type="text" 
-              placeholder="your name" 
-              aria-label="Enter your name"
-              value={name} 
-              onChange={(e) => setName(e.target.value)} 
-              required 
-              className="bg-primary text-writingColor px-4 py-2 rounded-md placeholder-darkAccent focus:outline-none focus:ring-2 focus:ring-darkAccent"
-            />
-            
-            <input 
-              type="email" 
-              placeholder="your email" 
-              aria-label="Enter your email"
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
-              required 
-              className="bg-primary text-writingColor px-4 py-2 rounded-md placeholder-darkAccent focus:outline-none focus:ring-2 focus:ring-darkAccent"
-            />
-            
-            <textarea 
-              placeholder="your message" 
-              aria-label="Enter your message"
-              value={message} 
-              onChange={(e) => setMessage(e.target.value)} 
-              required 
-              className="bg-primary text-writingColor px-4 py-2 h-28 rounded-md placeholder-darkAccent focus:outline-none focus:ring-2 focus:ring-darkAccent"
-            />
-            
+
+          {/* ✅ FormSubmit Direct Form Submission */}
+          <form 
+            action="https://formsubmit.co/avnikapooredu@gmail.com" 
+            method="POST" 
+            className="flex flex-col space-y-4"
+            onSubmit={handleValidation}
+          >
+            {/* ✅ Name Input */}
+            <div>
+              <input 
+                type="text" 
+                name="name" 
+                placeholder="Your Name" 
+                required 
+                className="bg-primary text-writingColor px-4 py-2 rounded-md placeholder-darkAccent border-2 border-secondary focus:outline-none focus:ring-2 focus:ring-darkAccent"
+                onInvalid={(e) => e.preventDefault()}
+              />
+              {errors?.name && <p className="text-secondary text-sm mt-1">{errors.name}</p>}
+            </div>
+
+            {/* ✅ Email Input */}
+            <div>
+              <input 
+                type="email" 
+                name="email" 
+                placeholder="Your Email" 
+                required 
+                className="bg-primary text-writingColor px-4 py-2 rounded-md placeholder-darkAccent border-2 border-secondary focus:outline-none focus:ring-2 focus:ring-darkAccent"
+                onInvalid={(e) => e.preventDefault()}
+              />
+              {errors?.email && <p className="text-secondary text-sm mt-1">{errors.email}</p>}
+            </div>
+
+            {/* ✅ Message Input */}
+            <div>
+              <textarea 
+                name="message" 
+                placeholder="Your Message" 
+                required 
+                className="bg-primary text-writingColor px-4 py-2 h-28 rounded-md placeholder-darkAccent border-2 border-secondary focus:outline-none focus:ring-2 focus:ring-darkAccent"
+                onInvalid={(e) => e.preventDefault()}
+              />
+              {errors?.message && <p className="text-secondary text-sm mt-1">{errors.message}</p>}
+            </div>
+
+            {/* ✅ Hidden Fields for Better UX */}
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" /> 
+            <input type="hidden" name="_captcha" value="false" />
+
+            {/* ✅ Submit Button */}
             <button 
               type="submit" 
-              className={`py-2 px-4 rounded-lg font-bold transition-all ${
-                submitted ? "bg-highlight text-writingColor cursor-not-allowed" : "bg-darkAccent text-white hover:bg-writingColor"
-              }`}
-              disabled={submitted}
+              className="py-2 px-4 rounded-lg font-bold transition-all bg-darkAccent text-white hover:bg-writingColor"
             >
-              {submitted ? "sent!" : "send"}
+              Send
             </button>
           </form>
         </div>
-
       </div>
     </footer>
   );

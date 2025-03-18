@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export default function AboutMe() {
   const words = useMemo(
     () => [
-      <span key="1" className="font-emoji">finding ways to fit travel & adventure into my schedule ✈️.</span>,
+      <span key="1" className="font-emoji">trying to fit travel & adventure into my schedule ✈️.</span>,
       <span key="2" className="font-emoji">convincing friends to go to big way 🍲.</span>,
       <span key="3" className="font-emoji">picking up yet another hobby 🎭.</span>,
     ],
