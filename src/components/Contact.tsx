@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
@@ -9,6 +9,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const successRef = useRef<HTMLParagraphElement>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,6 +32,7 @@ export default function Contact() {
         setName("");
         setEmail("");
         setMessage("");
+        successRef.current?.focus();
       }, 3000);
       
     } catch (error) {
@@ -47,13 +49,13 @@ export default function Contact() {
           <h2 className="text-3xl font-bold mb-4">let’s connect</h2>
           <p className="text-darkAccent/80 mb-6">reach out through my socials or drop a message!</p>
           <div className="flex space-x-6 text-2xl text-writingColor">
-            <a href="https://www.linkedin.com/in/avni-kapoor/" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition">
+            <a href="https://www.linkedin.com/in/avni-kapoor/" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition" aria-label="LinkedIn profile">
               <FaLinkedin />
             </a>
-            <a href="https://github.com/avkap007" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition">
+            <a href="https://github.com/avkap007" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition" aria-label="Github profile">
               <FaGithub />
             </a>
-            <a href="mailto:avnikapooedu@gmail.com" className="hover:text-secondary transition">
+            <a href="mailto:avnikapooedu@gmail.com" className="hover:text-secondary transition" aria-label="Send an email">
               <FaEnvelope />
             </a>
           </div>

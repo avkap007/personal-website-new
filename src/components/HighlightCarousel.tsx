@@ -16,6 +16,7 @@ type Resource = {
 type Highlight = {
   id: number;
   image: string;
+  altText?: string;
   title?: string;
   description?: string;
   resources?: Resource[]; // ✅ New field for links
@@ -64,7 +65,7 @@ export default function HighlightCarousel() {
               <div className="relative w-full h-[320px] overflow-hidden rounded-lg">
                 <Image
                   src={item.image}
-                  alt={item.title || "Highlight Image"}
+                  alt={item.altText || item.title || "Highlight Image"}
                   width={450} // Explicit width
                   height={320}
                   className="w-full h-full object-cover rounded-lg transition-transform duration-300 transform group-hover:scale-105"

@@ -62,7 +62,7 @@ export default function AboutMe() {
           <div className="flip-card-front">
             <Image
               src="/profile_avatar.gif"
-              alt="Avni Kapoor"
+              alt="Illustrated avatar with doodles"
               fill
               className="w-full h-full object-cover rounded-2xl"
               unoptimized
@@ -74,7 +74,7 @@ export default function AboutMe() {
           <div className="flip-card-back">
             <Image
               src="/profile_face.gif"
-              alt="Avni Kapoor Back"
+              alt="profile picture with doodles and sunglasses"
               fill
               className="w-full h-full object-cover rounded-2xl"
               unoptimized
@@ -94,7 +94,7 @@ export default function AboutMe() {
             <span className="font-semibold">[uhv-knee]</span>
             <button
               onClick={playPronunciation}
-              className="text-accent text-xl hover:text-darkAccent transition"
+              className="text-accent text-xl hover:text-darkAccent transition focus:ring-2 focus:ring-darkAccent focus:outline-none"
             >
               <BsSoundwave />
             </button>
@@ -108,7 +108,7 @@ export default function AboutMe() {
         </p>
 
         {/* Typing Animation */}
-        <p className="mt-4 max-w-xl text-med text-gray-500 leading-relaxed">
+        <p className="mt-4 max-w-xl text-med text-gray-500 leading-relaxed" aria-live="polite">
           and am always - {text}
           <span className="animate-blink">|</span>
         </p>
