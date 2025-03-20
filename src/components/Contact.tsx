@@ -55,7 +55,7 @@ export default function Contact() {
             <a href="https://github.com/avkap007" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition" aria-label="Github profile">
               <FaGithub />
             </a>
-            <a href="mailto:avnikapooedu@gmail.com" className="hover:text-secondary transition" aria-label="Send an email">
+            <a href="mailto:avnikapooredu@gmail.com" className="hover:text-secondary transition" aria-label="Send an email">
               <FaEnvelope />
             </a>
           </div>
