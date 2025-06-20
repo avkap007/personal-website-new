@@ -1,0 +1,26 @@
+[
+  {
+    "id": "how-i-get-a-lot-done",
+    "title": "How I Get a Lot Done",
+    "date": "2025-06-19",
+    "excerpt": "My productivity system that helps me juggle product management, coding, research, and life.",
+    "tags": ["productivity", "personal", "tips"],
+    "readTime": "8 min read"
+  },
+  {
+    "id": "grace-hopper-celebration-reflections",
+    "title": "Grace Hopper Celebration 2024: My Key Takeaways",
+    "date": "2024-10-20",
+    "excerpt": "Three days of inspiring talks, networking, and insights from the world's largest celebration of women in computing.",
+    "tags": ["conference", "networking", "career", "women-in-tech"],
+    "readTime": "6 min read"
+  },
+  {
+    "id": "building-products-users-love",
+    "title": "Building Products Users Actually Love",
+    "date": "2024-11-15",
+    "excerpt": "What I've learned about user-centered design and product development through my experiences in product management.",
+    "tags": ["product-management", "ux", "design-thinking"],
+    "readTime": "10 min read"
+  }
+]
