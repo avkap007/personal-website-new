@@ -50,6 +50,8 @@ export default function AboutMe() {
     audio.play().catch((err) => console.error("Audio play failed:", err));
   };
 
+  
+
   return (
     <section
       id="about"
@@ -133,7 +135,7 @@ export default function AboutMe() {
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-lg text-med font-medium transition-all bg-accent text-darkAccent hover:bg-darkAccent hover:text-white mt-4 inline-block"
         >
-          View resume
+          view resume
         </motion.a>
       </div>
     </section>
