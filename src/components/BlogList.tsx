@@ -6,10 +6,12 @@ import Link from "next/link";
 type BlogPost = {
   id: string;
   title: string;
+  url: string;
   date: string;
+  readTime: string;
+  cover: string;
   excerpt: string;
   tags: string[];
-  readTime: string;
 };
 
 export default function BlogList() {
@@ -35,11 +37,11 @@ export default function BlogList() {
     <div className="w-full max-w-4xl mx-auto px-8 md:px-20">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-writingColor mb-4">
-          my writings
+        <h1 className="text-3xl md:text-4xl font-extrabold text-writingColor mb-6">
+          stuff i've written
         </h1>
         <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-          thoughts on product, tech, life, and everything in between ✍️
+          this section is currently a work in progress. thoughts on product, tech, life, and everything in between ✍️
         </p>
       </div>
 
@@ -67,7 +69,7 @@ export default function BlogList() {
 }
 
 const BlogPostCard = ({ post }: { post: BlogPost }) => (
-  <Link href={`/blog/${post.id}`}>
+  <a href={post.url} target="_blank" rel="noopener noreferrer">
     <article className="bg-white/50 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg transition-all border border-gray-200 hover:border-accent cursor-pointer">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between">
         <div className="flex-1">
@@ -95,5 +97,5 @@ const BlogPostCard = ({ post }: { post: BlogPost }) => (
         </div>
       </div>
     </article>
-  </Link>
+  </a>
 );
