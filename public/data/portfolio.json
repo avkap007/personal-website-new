@@ -1,5 +1,15 @@
 [
   {
+   "id": 5,
+   "title": "SettleWell – Newcomer Resource Hub",
+   "date": "June 2025",
+   "tags": ["React", "Next.js", "Tailwind", "Supabase"],
+   "description": "Built a mobile-friendly resource hub for newcomers to Canada navigating immigration, housing, healthcare, and more. Hit 1,500+ unique visits in 4 days with <25% bounce rate. Designed for clarity and ease of use with a clean UI and structured content.",
+   "image": "/images/portfolio/settlewell.png",
+  "link": "https://settle-well.vercel.app/"
+  },
+
+  {
     "id": 1,
     "title": "Rufus Guitar Shop Redesign - FLUI Hackathon",
     "date": "Feb 2025",
