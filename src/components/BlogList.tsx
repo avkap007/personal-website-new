@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 
 type BlogPost = {
   id: string;
@@ -38,7 +37,7 @@ export default function BlogList() {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-3xl md:text-4xl font-extrabold text-writingColor mb-6">
-          stuff i've written
+          stuff I&apos;ve written
         </h1>
         <p className="text-lg text-gray-700 max-w-2xl mx-auto">
           this section is currently a work in progress. thoughts on product, tech, life, and everything in between ✍️
@@ -60,7 +59,7 @@ export default function BlogList() {
         ) : (
           <div className="text-center py-16">
             <p className="text-xl text-gray-500 mb-4">coming soon!</p>
-            <p className="text-gray-600">I'm working on some great content. Check back soon! 🚧</p>
+            <p className="text-gray-600">I&apos;m working on some great content. Check back soon! 🚧</p>
           </div>
         )}
       </div>

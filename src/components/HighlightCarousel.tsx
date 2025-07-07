@@ -39,7 +39,7 @@ export default function HighlightCarousel() {
       {/* ✅ New byline below heading */}
       <p className="text-center text-gray-700 text-md max-w-2xl mx-auto mb-8">
         I do a lot, and pictures are so much more fun to convey the message! <br/> 
-        Here are a few snapshots of what I've been up to recently. 🎞️
+        Here are a few snapshots of what I&apos;ve been up to recently. 🎞️
       </p>
 
       <div className="w-full">
