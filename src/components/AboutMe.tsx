@@ -127,13 +127,13 @@ export default function AboutMe() {
 
         {/* Resume Button */}
         <motion.a
-          href="/avni-kapoor-resume.pdf"
+          href="/avni_kapoor_resume.pdf"
           target="_blank"
           whileHover={{ scale: 1.1 }}
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-lg text-med font-medium transition-all bg-accent text-darkAccent hover:bg-darkAccent hover:text-white mt-4 inline-block"
         >
-          View resume
+          view resume
         </motion.a>
       </div>
     </section>
