@@ -50,6 +50,8 @@ export default function AboutMe() {
     audio.play().catch((err) => console.error("Audio play failed:", err));
   };
 
+  
+
   return (
     <section
       id="about"
@@ -86,19 +88,8 @@ export default function AboutMe() {
 
       {/* About Text */}
       <div className="text-left max-w-2xl">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-writingColor">
-          hi, nice to meet you! <br />
-          i'm Avni.{" "}
-          <span className="text-gray-500 text-lg flex items-center gap-1">
-            <span className="italic font-normal">pronunciation -</span> 
-            <span className="font-semibold">[uhv-knee]</span>
-            <button
-              onClick={playPronunciation}
-              className="text-accent text-xl hover:text-darkAccent transition focus:ring-2 focus:ring-darkAccent focus:outline-none"
-            >
-              <BsSoundwave />
-            </button>
-          </span>
+        <h1 className="text-4xl md:text-6xl font-extrabold text-writingColor mb-6">
+          Hi, I&apos;m Avni
         </h1>
 
         <p className="text-md md:text-lg text-darkAccent mt-2 lowercase">
@@ -133,7 +124,7 @@ export default function AboutMe() {
           rel="noopener noreferrer"
           className="px-4 py-2 rounded-lg text-med font-medium transition-all bg-accent text-darkAccent hover:bg-darkAccent hover:text-white mt-4 inline-block"
         >
-          View resume
+          view resume
         </motion.a>
       </div>
     </section>

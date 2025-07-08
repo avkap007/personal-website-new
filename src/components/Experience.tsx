@@ -140,7 +140,7 @@ const ExperienceCard = ({
     {open === exp.id && (
       <ul className="mt-4 px-6 list-disc list-inside text-gray-700 space-y-2">
         {exp.details.map((point, index) => (
-          <li key={index} className="mx-auto w-fit">{point}</li>
+          <li key={index} className="mx-auto w-fit">{point.replace('"', '&quot;')}</li>
         ))}
       </ul>
     )}
