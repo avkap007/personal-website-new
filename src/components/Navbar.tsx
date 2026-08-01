@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "/", label: "home" },
@@ -24,37 +25,43 @@ export default function Navbar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/30 backdrop-blur-lg z-50 shadow-md">
+    <header className="fixed top-0 left-0 w-full bg-primary/30 backdrop-blur-lg z-50 shadow-md">
       <div className="flex items-center justify-between px-6 md:px-12 h-16 w-full max-w-6xl mx-auto">
         <Link href="/" className="text-xl font-semibold text-writingColor hover:text-darkAccent transition">
           avni kapoor
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-lg font-medium">
-          {links.map(({ href, label }) => (
-            <Link key={href} href={href} className={navClass(isActive(href))}>
-              {label}
-            </Link>
-          ))}
-        </nav>
+        <div className="hidden md:flex items-center gap-8">
+          <nav className="flex items-center gap-8 text-lg font-medium">
+            {links.map(({ href, label }) => (
+              <Link key={href} href={href} className={navClass(isActive(href))}>
+                {label}
+              </Link>
+            ))}
+          </nav>
+          <ThemeToggle />
+        </div>
 
-        <button
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex flex-col space-y-1 p-2 focus:outline-none"
-          aria-expanded={isOpen}
-          aria-label="Menu"
-        >
-          <span
-            className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "rotate-45 translate-y-2" : ""}`}
-          />
-          <span
-            className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}
-          />
-        </button>
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex flex-col space-y-1 p-2 focus:outline-none"
+            aria-expanded={isOpen}
+            aria-label="Menu"
+          >
+            <span
+              className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "rotate-45 translate-y-2" : ""}`}
+            />
+            <span
+              className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}
+            />
+          </button>
+        </div>
       </div>
 
       {isOpen && (

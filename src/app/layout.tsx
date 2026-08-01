@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { themeInitScript } from "@/components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "Avni Kapoor",
@@ -13,8 +14,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className="font-serif antialiased text-writingColor">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="font-serif antialiased text-writingColor bg-primary">
         {children}
       </body>
     </html>

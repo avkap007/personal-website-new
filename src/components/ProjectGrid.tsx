@@ -60,7 +60,7 @@ export default function ProjectGrid() {
           {[1, 2, 3, 4, 5].map((n) => (
             <div
               key={n}
-              className="h-52 w-full rounded-xl bg-accent/15 animate-pulse"
+              className="h-80 w-full rounded-xl bg-accent/15 animate-pulse"
               aria-hidden
             />
           ))}

@@ -38,7 +38,7 @@ export default function Experience() {
       </h1>
 
       {/* Subtitle (Hidden on Mobile) */}
-      <p className="text-center text-gray-700 text-md max-w-2xl mx-auto mb-8 hidden md:block">
+      <p className="text-center text-writingColor/70 text-md max-w-2xl mx-auto mb-8 hidden md:block">
         "A little bit of everything, all at once." <br />
         My experiences range from product, development, data to research and community. 🌿
       </p>
@@ -77,7 +77,7 @@ export default function Experience() {
           experiences.filter(
             (exp) => selectedCategory === "All" || exp.category === selectedCategory
           ).length === 0 && (
-            <div className="h-full flex items-center justify-center text-gray-500">
+            <div className="h-full flex items-center justify-center text-writingColor/55">
               No experiences found.
             </div>
           )}
@@ -90,7 +90,7 @@ export default function Experience() {
 const SkeletonLoader = () => (
   <div className="space-y-4">
     {[1, 2, 3].map((key) => (
-      <div key={key} className="h-24 bg-gray-200 animate-pulse rounded-lg w-full max-w-[700px] mx-auto"></div>
+      <div key={key} className="h-24 bg-writingColor/10 animate-pulse rounded-lg w-full max-w-[700px] mx-auto"></div>
     ))}
   </div>
 );
@@ -138,7 +138,7 @@ const ExperienceCard = ({
     </button>
 
     {open === exp.id && (
-      <ul className="mt-4 px-6 list-disc list-inside text-gray-700 space-y-2">
+      <ul className="mt-4 px-6 list-disc list-inside text-writingColor/70 space-y-2">
         {exp.details.map((point, index) => (
           <li key={index} className="mx-auto w-fit">{point}</li>
         ))}

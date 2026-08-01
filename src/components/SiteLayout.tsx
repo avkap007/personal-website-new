@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 function NavFallback() {
   return (
-    <header className="fixed top-0 left-0 w-full h-16 bg-white/30 backdrop-blur-lg z-50 shadow-md" />
+    <header className="fixed top-0 left-0 w-full h-16 bg-primary/30 backdrop-blur-lg z-50 shadow-md" />
   );
 }
 
