@@ -5,10 +5,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* === Theme tokens (light default, .dark override) === */
+:root {
+  --color-primary: 255 246 250;
+  --color-writing-color: 21 73 106;
+  --color-tertiary: 240 203 240;
+  --color-secondary: 225 149 171;
+  --color-accent: 248 184 212;
+  --color-muted: 252 231 243;
+  --color-dark-accent: 158 19 80;
+}
+
+.dark {
+  --color-primary: 13 17 28;
+  --color-writing-color: 224 232 240;
+  --color-tertiary: 107 74 122;
+  --color-secondary: 230 140 176;
+  --color-accent: 46 24 34;
+  --color-muted: 26 22 34;
+  --color-dark-accent: 215 66 140;
+}
+
 /* Apply IBM Plex Serif globally for consistency */
 @layer base {
   body {
-    @apply font-serif text-writingColor !important;
+    @apply font-serif text-writingColor bg-primary transition-colors duration-300 !important;
   }
 }
 
@@ -66,6 +87,13 @@
   background: #ffc8dd; /* Lighter shade on hover */
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #7a3f56;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #96506c;
+}
+
 /* Ensure scrollable sections maintain transparency */
 .scrollable-container {
   background: transparent !important;
@@ -85,6 +113,11 @@
   background-size: 220% 220%;
   animation: gradient-animation 10s ease infinite;
   opacity: 0.3; /* Slight transparency for subtle effect */
+}
+
+.dark .animated-lines {
+  background: linear-gradient(300deg, #0D111C, #3A2036, #1B2A4A, #17324A);
+  opacity: 0.55;
 }
 
 /* Smooth-moving gradient effect */

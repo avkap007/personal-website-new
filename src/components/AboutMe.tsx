@@ -3,14 +3,15 @@
 import Image from "next/image";
 import { useEffect, useState, useMemo } from "react";
 import { BsSoundwave } from "react-icons/bs";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export default function AboutMe() {
   const words = useMemo(
     () => [
-      <span key="1" className="font-emoji">trying to fit travel & adventure into my schedule ✈️.</span>,
-      <span key="2" className="font-emoji">convincing friends to go to big way 🍲.</span>,
-      <span key="3" className="font-emoji">picking up yet another hobby 🎭.</span>,
+      "trying to fit travel & adventure into my schedule ✈️.",
+      "convincing friends to go to big way 🍲.",
+      "picking up yet another hobby 🎭.",
     ],
     []
   );
@@ -36,8 +37,8 @@ export default function AboutMe() {
       }, deletingSpeed);
     } else {
       timeout = setTimeout(() => {
-        setText((prev) => currentWord.props.children.slice(0, prev.length + 1));
-        if (text.length === currentWord.props.children.length) {
+        setText((prev) => currentWord.slice(0, prev.length + 1));
+        if (text.length === currentWord.length) {
           setTimeout(() => setIsDeleting(true), delayBetweenWords);
         }
       }, typingSpeed);
@@ -56,31 +57,62 @@ export default function AboutMe() {
       className="py-36 flex flex-col md:flex-row items-center justify-center px-12 md:px-20 gap-16 font-serif"
     >
       {/* Flip Card Container */}
-      <div className="group w-72 h-72 md:w-96 md:h-96 relative">
-        <div className="flip-card w-full h-full">
-          {/* Front Side */}
-          <div className="flip-card-front">
-            <Image
-              src="/profile_avatar.gif"
-              alt="Illustrated avatar with doodles"
-              fill
-              className="w-full h-full object-cover rounded-2xl"
-              unoptimized
-              priority
-            />
-          </div>
+      <div className="flex flex-col items-center gap-5">
+        <div className="group w-72 h-72 md:w-96 md:h-96 relative">
+          <div className="flip-card w-full h-full">
+            {/* Front Side */}
+            <div className="flip-card-front">
+              <Image
+                src="/profile_avatar.gif"
+                alt="Illustrated avatar with doodles"
+                fill
+                className="w-full h-full object-cover rounded-2xl"
+                unoptimized
+                priority
+              />
+            </div>
 
-          {/* Back Side */}
-          <div className="flip-card-back">
-            <Image
-              src="/profile_face.gif"
-              alt="profile picture with doodles and sunglasses"
-              fill
-              className="w-full h-full object-cover rounded-2xl"
-              unoptimized
-              priority
-            />
+            {/* Back Side */}
+            <div className="flip-card-back">
+              <Image
+                src="/profile_face.gif"
+                alt="profile picture with doodles and sunglasses"
+                fill
+                className="w-full h-full object-cover rounded-2xl"
+                unoptimized
+                priority
+              />
+            </div>
           </div>
+        </div>
+
+        {/* Socials */}
+        <div className="flex items-center gap-6 text-2xl text-writingColor">
+          <a
+            href="https://www.linkedin.com/in/avni-kapoor/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-darkAccent transition"
+            aria-label="LinkedIn profile"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/avkap007"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-darkAccent transition"
+            aria-label="Github profile"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="mailto:avnikapooredu@gmail.com"
+            className="hover:text-darkAccent transition"
+            aria-label="Send an email"
+          >
+            <FaEnvelope />
+          </a>
         </div>
       </div>
 
@@ -89,7 +121,7 @@ export default function AboutMe() {
         <h1 className="text-3xl md:text-4xl font-extrabold text-writingColor">
           hi, nice to meet you! <br />
           i'm Avni.{" "}
-          <span className="text-gray-500 text-lg flex items-center gap-1">
+          <span className="text-writingColor/55 text-lg flex items-center gap-1">
             <span className="italic font-normal">pronunciation -</span> 
             <span className="font-semibold">[uhv-knee]</span>
             <button
@@ -108,7 +140,7 @@ export default function AboutMe() {
         </p>
 
         {/* Typing Animation */}
-        <p className="mt-4 max-w-xl text-med text-gray-500 leading-relaxed" aria-live="polite">
+        <p className="mt-4 max-w-xl text-med text-writingColor/55 leading-relaxed" aria-live="polite">
           and am always - {text}
           <span className="animate-blink">|</span>
         </p>

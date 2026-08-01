@@ -1,5 +1,11 @@
 /** @type {import('tailwindcss').Config} */
+
+function withOpacity(varName: string) {
+  return `rgb(var(${varName}) / <alpha-value>)`;
+}
+
 module.exports = {
+  darkMode: "class",
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -8,13 +14,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#FFF6FA",
-        writingColor: "#15496A", // Changed from `writingColour`
-        tertiary: "#F0CBF0",
-        secondary: "#E195AB",
-        accent: "#F8B8D4",
-        muted: "#FCE7F3",
-        darkAccent: "#BE185D",
+        primary: withOpacity("--color-primary"),
+        writingColor: withOpacity("--color-writing-color"),
+        tertiary: withOpacity("--color-tertiary"),
+        secondary: withOpacity("--color-secondary"),
+        accent: withOpacity("--color-accent"),
+        muted: withOpacity("--color-muted"),
+        darkAccent: withOpacity("--color-dark-accent"),
       },
       fontFamily: {
         serif: ['"IBM Plex Serif"', "serif"],

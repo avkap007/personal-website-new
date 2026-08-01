@@ -1,64 +1,85 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
+
+const links = [
+  { href: "/", label: "home" },
+  { href: "/projects", label: "projects" },
+  { href: "/writings", label: "writings" },
+] as const;
+
+function navClass(active: boolean) {
+  return active
+    ? "text-darkAccent font-semibold"
+    : "text-writingColor hover:text-darkAccent transition";
+}
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/30 backdrop-blur-lg text-writingColor z-50 transition-all shadow-md">
-      <div className="flex items-center justify-between px-12 h-16 w-full">
+    <header className="fixed top-0 left-0 w-full bg-primary/30 backdrop-blur-lg z-50 shadow-md">
+      <div className="flex items-center justify-between px-6 md:px-12 h-16 w-full max-w-6xl mx-auto">
+        <Link href="/" className="text-xl font-semibold text-writingColor hover:text-darkAccent transition">
+          avni kapoor
+        </Link>
 
-        {/* Left Side - Avni Kapoor */}
-        <span className="text-xl font-semibold">Avni Kapoor</span>
-
-        {/* Right Side - Navigation + Contact */}
-        <div className="flex items-center space-x-8 text-lg font-medium">
-          <nav className="hidden md:flex space-x-8">
-            <Link href="#about" className="hover:text-accent transition">about</Link>
-            <Link href="#experience" className="hover:text-accent transition">experience</Link>
-            <Link href="#portfolio" className="hover:text-accent transition">portfolio</Link>
+        <div className="hidden md:flex items-center gap-8">
+          <nav className="flex items-center gap-8 text-lg font-medium">
+            {links.map(({ href, label }) => (
+              <Link key={href} href={href} className={navClass(isActive(href))}>
+                {label}
+              </Link>
+            ))}
           </nav>
+          <ThemeToggle />
+        </div>
 
-          {/* Contact Button */}
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.1 }}
-            className="px-4 py-2 rounded-lg text-med font-medium transition-all bg-accent text-darkAccent hover:bg-darkAccent hover:text-white hidden md:inline-block"
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex flex-col space-y-1 p-2 focus:outline-none"
+            aria-expanded={isOpen}
+            aria-label="Menu"
           >
-            contact
-          </motion.a>
-
-          {/* Mobile Menu Button - Wider Lines */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="flex flex-col space-y-1 p-2 focus:outline-none"
-            >
-              <div className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "rotate-45 translate-y-2" : ""}`}></div>
-              <div className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "opacity-0" : ""}`}></div>
-              <div className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}></div>
-            </button>
-          </div>
+            <span
+              className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "rotate-45 translate-y-2" : ""}`}
+            />
+            <span
+              className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`h-[3px] w-8 bg-writingColor transition-all ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}
+            />
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <motion.div
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="absolute top-full w-full bg-primary backdrop-blur-lg p-4 rounded-lg md:hidden"
-        >
-          <ul className="text-center space-y-2">
-            <li><Link href="#about" onClick={() => setIsOpen(false)}>about</Link></li>
-            <li><Link href="#experience" onClick={() => setIsOpen(false)}>experience</Link></li>
-            <li><Link href="#portfolio" onClick={() => setIsOpen(false)}>portfolio</Link></li>
-            <li><Link href="#contact" onClick={() => setIsOpen(false)}>contact</Link></li>
+        <nav className="md:hidden absolute top-full w-full bg-primary/95 backdrop-blur-lg border-t border-accent/30 py-4 px-6">
+          <ul className="flex flex-col gap-3 text-center text-lg">
+            {links.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={navClass(isActive(href))}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
-        </motion.div>
+        </nav>
       )}
     </header>
   );
