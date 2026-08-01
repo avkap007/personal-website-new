@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 export default function AboutMe() {
   const words = useMemo(
     () => [
-      <span key="1" className="font-emoji">trying to fit travel & adventure into my schedule ✈️.</span>,
-      <span key="2" className="font-emoji">convincing friends to go to big way 🍲.</span>,
-      <span key="3" className="font-emoji">picking up yet another hobby 🎭.</span>,
+      "trying to fit travel & adventure into my schedule ✈️.",
+      "convincing friends to go to big way 🍲.",
+      "picking up yet another hobby 🎭.",
     ],
     []
   );
@@ -36,8 +36,8 @@ export default function AboutMe() {
       }, deletingSpeed);
     } else {
       timeout = setTimeout(() => {
-        setText((prev) => currentWord.props.children.slice(0, prev.length + 1));
-        if (text.length === currentWord.props.children.length) {
+        setText((prev) => currentWord.slice(0, prev.length + 1));
+        if (text.length === currentWord.length) {
           setTimeout(() => setIsDeleting(true), delayBetweenWords);
         }
       }, typingSpeed);
