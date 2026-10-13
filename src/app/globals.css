@@ -133,30 +133,3 @@
   }
 }
 
-/* Subtle grid overlay for texture and depth */
-.animated-lines::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-    rgba(255, 255, 255, 0.15) 1px,
-    transparent 1px
-  );
-  background-size: 30px 30px; /* Adjust grid size for better fit */
-  animation: grid-animation 20s linear infinite;
-  z-index: -1;
-  opacity: 0.3; /* Low opacity to avoid overwhelming the design */
-}
-/* Adds slight rotation for a futuristic dynamic effect */
-@keyframes grid-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(1deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}

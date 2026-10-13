@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
@@ -10,6 +10,8 @@ const links = [
   { href: "/projects", label: "projects" },
   { href: "/writings", label: "writings" },
 ] as const;
+
+const CLOSE_MS = 150;
 
 function navClass(active: boolean) {
   return active
@@ -20,9 +22,41 @@ function navClass(active: boolean) {
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  const closeMenu = useCallback(() => {
+    if (!isOpen || isClosing) return;
+    setIsClosing(true);
+    window.setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false);
+    }, CLOSE_MS);
+  }, [isOpen, isClosing]);
+
+  const openMenu = () => {
+    setIsClosing(false);
+    setIsOpen(true);
+  };
+
+  const toggleMenu = () => {
+    if (isOpen) closeMenu();
+    else openMenu();
+  };
+
+  useEffect(() => {
+    closeMenu();
+  }, [pathname, closeMenu]);
+
+  const menuClass = [
+    "t-dropdown md:hidden absolute top-full left-0 w-full bg-primary/95 backdrop-blur-lg border-t border-accent/30 py-4 px-6",
+    isOpen && !isClosing ? "is-open" : "",
+    isClosing ? "is-closing" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <header className="fixed top-0 left-0 w-full bg-primary/30 backdrop-blur-lg z-50 shadow-md">
@@ -46,7 +80,7 @@ export default function Navbar() {
           <ThemeToggle />
           <button
             type="button"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={toggleMenu}
             className="flex flex-col space-y-1 p-2 focus:outline-none"
             aria-expanded={isOpen}
             aria-label="Menu"
@@ -64,23 +98,25 @@ export default function Navbar() {
         </div>
       </div>
 
-      {isOpen && (
-        <nav className="md:hidden absolute top-full w-full bg-primary/95 backdrop-blur-lg border-t border-accent/30 py-4 px-6">
-          <ul className="flex flex-col gap-3 text-center text-lg">
-            {links.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className={navClass(isActive(href))}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
+      <nav
+        className={menuClass}
+        data-origin="top-center"
+        aria-hidden={!isOpen && !isClosing}
+      >
+        <ul className="flex flex-col gap-3 text-center text-lg">
+          {links.map(({ href, label }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className={navClass(isActive(href))}
+                onClick={closeMenu}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   );
 }

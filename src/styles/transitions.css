@@ -1,0 +1,83 @@
+/* Motion tokens from https://transitions.dev (Jakubantalik/transitions.dev) */
+:root {
+  --duration-fast: 250ms;
+  --duration-quick: 150ms;
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dropdown-open-dur: 250ms;
+  --dropdown-close-dur: 150ms;
+  --dropdown-pre-scale: 0.97;
+  --dropdown-closing-scale: 0.99;
+  --dropdown-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --learn-shift: 2px;
+  --learn-in: 350ms;
+  --learn-out: 350ms;
+  --learn-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Card hover lift (project cards, list rows) */
+.t-card-lift {
+  transition:
+    transform var(--duration-fast) var(--ease-smooth-out),
+    box-shadow var(--duration-fast) var(--ease-smooth-out),
+    border-color var(--duration-fast) var(--ease-smooth-out);
+  will-change: transform;
+}
+
+.t-card-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Menu dropdown (mobile nav) */
+.t-dropdown {
+  transform-origin: top center;
+  transform: scale(var(--dropdown-pre-scale));
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--dropdown-open-dur) var(--dropdown-ease),
+    opacity var(--dropdown-open-dur) var(--dropdown-ease);
+  will-change: transform, opacity;
+}
+
+.t-dropdown[data-origin="top-right"] {
+  transform-origin: top right;
+}
+
+.t-dropdown.is-open {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.t-dropdown.is-closing {
+  transform: scale(var(--dropdown-closing-scale));
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--dropdown-close-dur) var(--dropdown-ease),
+    opacity var(--dropdown-close-dur) var(--dropdown-ease);
+}
+
+/* Learn-more link nudge (writings list, external links) */
+.t-learn-arrow {
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform var(--learn-out) var(--learn-ease);
+}
+
+.group:hover .t-learn-arrow {
+  transform: translateX(var(--learn-shift));
+  transition-duration: var(--learn-in);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t-card-lift,
+  .t-dropdown,
+  .t-learn-arrow {
+    transition: none !important;
+  }
+
+  .t-card-lift:hover {
+    transform: none;
+  }
+}

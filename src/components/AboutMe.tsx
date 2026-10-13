@@ -4,7 +4,9 @@ import Image from "next/image";
 import { useEffect, useState, useMemo } from "react";
 import { BsSoundwave } from "react-icons/bs";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { SiSubstack } from "react-icons/si";
 import { motion } from "framer-motion";
+import FactCards from "./FactCards";
 
 export default function AboutMe() {
   const words = useMemo(
@@ -113,6 +115,15 @@ export default function AboutMe() {
           >
             <FaEnvelope />
           </a>
+          <a
+            href="https://substack.com/@avnisays"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-darkAccent transition"
+            aria-label="Substack profile"
+          >
+            <SiSubstack />
+          </a>
         </div>
       </div>
 
@@ -145,10 +156,8 @@ export default function AboutMe() {
           <span className="animate-blink">|</span>
         </p>
 
-        {/* Short Intro */}
-        <p className="mt-4 max-w-xl text-med text-writingColor leading-relaxed">
-          a final-year computing and cognitive science honours student at Simon Fraser University.
-        </p>
+        {/* Fact Cards */}
+        <FactCards />
 
         {/* Standalone Mission Statement */}
         <p className="mt-4 max-w-xl text-lg font-semibold text-writingColor leading-relaxed">

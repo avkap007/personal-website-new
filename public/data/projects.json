@@ -1,27 +1,33 @@
 [
   {
     "id": "berst",
-    "title": "BERST",
+    "title": "BERSting at the Screams",
     "category": "research",
-    "detail": "honours thesis · ASR for L2 English speakers",
-    "tags": ["ASR", "speech", "NLP"],
-    "placeholder": true
+    "date": "2025",
+    "detail": "A dataset and benchmark for testing speech recognition with distant, emotional, obstructed, and shouted voices.",
+    "tags": ["ASR", "speech", "dataset"],
+    "link": "https://arxiv.org/abs/2505.00059",
+    "actionLabel": "Read Paper"
   },
   {
-    "id": "cogs-input-insight",
-    "title": "AI input insight study",
+    "id": "cujcs",
+    "title": "Canadian Undergraduate Journal of Cognitive Science",
     "category": "research",
-    "detail": "COGS 100 · ~100 students",
+    "date": "2025",
+    "detail": "As Editor-in-Chief, led Volume 8 from submissions through publication.",
+    "tags": ["editorial", "cogsci"],
+    "link": "https://journals.lib.sfu.ca/index.php/cujcs/issue/view/424",
+    "actionLabel": "View Issue"
+  },
+  {
+    "id": "ai-input-insight",
+    "title": "Teaching AI Literacy with AI Input Insight",
+    "category": "research",
+    "date": "2026",
+    "detail": "A hands-on classroom activity exploring how source material, influence, poisoning, and exclusion shape AI output.",
     "tags": ["HCI", "LLMs", "education"],
-    "placeholder": true
-  },
-  {
-    "id": "wikidata-frontier",
-    "title": "Wikidata & frontier LLMs",
-    "category": "research",
-    "detail": "UT Austin · SFU",
-    "tags": ["Wikidata", "evaluation", "LLMs"],
-    "placeholder": true
+    "link": "https://ai-input-insight.vercel.app/",
+    "actionLabel": "Try Tool"
   },
 
   {
@@ -30,9 +36,23 @@
     "category": "projects",
     "date": "June 2025",
     "tags": ["React", "Next.js", "Supabase"],
-    "description": "Built a mobile-friendly resource hub for newcomers to Canada navigating immigration, housing, healthcare, and more. Hit 1,500+ unique visits in 4 days with <25% bounce rate.",
+    "detail": "A resource hub for newcomers to Canada. 1,500+ visits in 4 days with <25% bounce rate.",
     "image": "/images/portfolio/settlewell.png",
-    "link": "https://settle-well.vercel.app/"
+    "gif": "/settle-well.mp4",
+    "link": "https://settle-well.vercel.app/",
+    "actionLabel": "Visit Site"
+  },
+  {
+    "id": "connect-sfu",
+    "title": "ConnectSFU",
+    "category": "projects",
+    "date": "2025",
+    "tags": ["Next.js", "AI"],
+    "detail": "Find events, make friends, and discover your SFU community. AI-powered search to find clubs and events naturally.",
+    "gif": "/connect-sfu.mp4",
+    "badge": "🏆 StormHacks 2025 Winner",
+    "link": "https://stormhacks-connectsfu.vercel.app/",
+    "actionLabel": "Try it"
   },
   {
     "id": "rufus-flui",
@@ -40,55 +60,48 @@
     "category": "projects",
     "date": "Feb 2025",
     "tags": ["Figma", "After Effects"],
-    "description": "1st prize at FLUI Hackathon '25. Led user research and redesigned the e-commerce experience for better product discovery, with high-fidelity prototypes and motion design.",
+    "detail": "Led user research and redesigned the e-commerce experience for better product discovery, with hi-fi prototypes and motion design.",
     "image": "/images/portfolio/flui-slide.webp",
-    "link": "https://www.youtube.com/watch?v=_sr4xQZiCWQ&t=61s"
+    "gif": "/rufus-guitar-shop.mp4",
+    "badge": "🏆 Emily Carr FLUI Hackathon 2025 Winner",
+    "link": "https://www.youtube.com/watch?v=_sr4xQZiCWQ&t=61s",
+    "actionLabel": "Watch Pitch"
   },
   {
-    "id": "borrowhood",
-    "title": "Borrowhood",
-    "category": "projects",
-    "date": "Jan 2025",
-    "tags": ["frontend", "design"],
-    "description": "Communal rental platform for listing items to borrow, exchange, or lend. Built for nwHACKS 2025.",
-    "image": "/images/portfolio/borrowhood-portfolio.webp",
-    "link": "https://devpost.com/software/borrowhood"
+    "id": "stormhacks-mvp",
+    "title": "StormHacks 2026, MVP Speedrun",
+    "category": "presentations",
+    "detail": "workshop on how to speed roll out an MVP",
+    "tags": ["hackathon", "workshop"],
+    "image": "/stormhacks-card-motion.gif",
+    "gif": "/stormhacks-card-motion.gif",
+    "link": "https://www.figma.com/deck/rjMQW4ltZWxkJ2vJHcNpOj",
+    "actionLabel": "View Presentation"
   },
   {
-    "id": "codementor",
-    "title": "CodeMentor AI",
+    "id": "pause",
+    "title": "Pause",
     "category": "projects",
-    "date": "Sept 2023",
-    "tags": ["React", "Codex"],
-    "description": "Code learning platform using React, Python, Steamship, and Codex APIs with compilation and AI tutors.",
-    "image": "/images/portfolio/codementorai.png",
-    "link": "https://github.com/gursewaktut/TeamPines"
-  },
-  {
-    "id": "next-read",
-    "title": "Next Read",
-    "category": "projects",
-    "date": "May 2023",
-    "tags": ["Python", "ML"],
-    "description": "Book recommender using Python and scikit-learn k-NN for item-based filtering.",
-    "image": "/images/portfolio/bookrecommender.png",
-    "link": "https://github.com/avkap007/book_recommender"
-  },
-  {
-    "id": "swift-pause",
-    "title": "Swift Pause",
-    "category": "projects",
-    "detail": "iOS · mindfulness",
-    "tags": ["Swift", "SwiftUI"],
-    "placeholder": true
+    "date": "March 2026",
+    "tags": ["Swift", "iOS"],
+    "detail": "A reflection app to replace doom scrolling with meaningful learning. One prompt, one answer, one moment of genuine reflection.",
+    "image": "/pause-header.gif",
+    "gif": "/pause-header.mp4",
+    "badge": "🏆 Swift Student Challenge 2026 Winner",
+    "link": "https://github.com/avkap007/pause_forswiftstudentchallenge2026",
+    "actionLabel": "View on GitHub"
   },
   {
     "id": "lil-agents",
     "title": "Lil Agents",
     "category": "projects",
-    "detail": "multi-agent playground",
-    "tags": ["agents", "TypeScript"],
-    "placeholder": true
+    "date": "April 2026",
+    "tags": ["Swift", "macOS", "AI"],
+    "detail": "Tiny AI friends that live on your Mac dock. Click them. Talk to them. Get things done.",
+    "image": "/lil-agents-header.gif",
+    "gif": "/lil-agents-header.mp4",
+    "link": "https://github.com/avkap007/lil-agents",
+    "actionLabel": "Watch Demo"
   },
 
   {
@@ -109,11 +122,14 @@
   },
   {
     "id": "treehouse",
-    "title": "Treehouse",
+    "title": "Treehouse SFU",
     "category": "community",
-    "detail": "mentorship · community",
-    "tags": ["mentorship"],
-    "placeholder": true
+    "detail": "I co-founded the chapter and help run weekly coworking sessions for passion projects :)",
+    "tags": ["coworking", "community"],
+    "image": "/treehouse-website-demo.gif",
+    "gif": "/treehouse-website-demo.gif",
+    "link": "https://treehouse.place/",
+    "actionLabel": "Join a session"
   },
   {
     "id": "try-catch-sfu",
@@ -126,12 +142,16 @@
 
   {
     "id": "early-career-pm",
-    "title": "Early career PM",
+    "title": "Product Camp 2026, Early Career PM",
     "category": "presentations",
-    "detail": "panel · product",
+    "detail": "panel on expectations, realities, and the roll of a dice",
     "tags": ["PM", "career"],
-    "placeholder": true
+    "image": "/product-camp-card-motion.gif",
+    "gif": "/product-camp-card-motion.gif",
+    "link": "https://www.figma.com/deck/jte4ZRE8WfOqX78AyI6FUZ/product-camp-early-career-pres?node-id=76-49&t=yTzGj30ZzvUvt0en-1",
+    "actionLabel": "View Presentation"
   },
+
   {
     "id": "high-school-pres",
     "title": "High school presentation",
@@ -150,10 +170,13 @@
   },
   {
     "id": "designing-career-wics",
-    "title": "Designing your career",
+    "title": "WICS, Designing Your Career",
     "category": "presentations",
-    "detail": "WICS · career design",
+    "detail": "for Women in Computing Science @ SFU",
     "tags": ["career", "WICS"],
-    "placeholder": true
+    "image": "/designing-your-career-card-motion.gif",
+    "gif": "/designing-your-career-card-motion.gif",
+    "link": "https://www.figma.com/deck/7POpchbxMKMl9OHJNyggY9",
+    "actionLabel": "View Presentation"
   }
 ]

@@ -10,9 +10,6 @@ import {
 
 type Filter = "all" | ProjectCategory;
 
-const GRID_CLASS =
-  "grid grid-cols-1 min-[480px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4";
-
 export default function ProjectGrid() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [filter, setFilter] = useState<Filter>("all");
@@ -32,9 +29,10 @@ export default function ProjectGrid() {
   }, [projects, filter]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
+      {/* Filters */}
       <div className="flex flex-wrap items-center gap-3">
-        <span className="text-xs font-medium text-writingColor/45">
+        <span className="text-xs font-medium text-writingColor/40">
           filter
         </span>
         <div className="flex flex-wrap gap-2">
@@ -43,10 +41,10 @@ export default function ProjectGrid() {
               key={id}
               type="button"
               onClick={() => setFilter(id)}
-              className={`px-3 py-1 rounded-full text-sm font-medium font-serif border transition ${
+              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 filter === id
-                  ? "bg-writingColor text-primary border-writingColor"
-                  : "bg-transparent text-writingColor border-writingColor/25 hover:border-writingColor/50"
+                  ? "bg-writingColor text-primary"
+                  : "bg-transparent text-writingColor/60 hover:text-writingColor hover:bg-writingColor/5"
               }`}
             >
               {label}
@@ -55,39 +53,38 @@ export default function ProjectGrid() {
         </div>
       </div>
 
+      {/* Masonry Grid */}
       {loading ? (
-        <div className={GRID_CLASS}>
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
           {[1, 2, 3, 4, 5].map((n) => (
             <div
               key={n}
-              className="h-80 w-full rounded-xl bg-accent/15 animate-pulse"
+              className="h-64 w-full rounded-2xl bg-writingColor/5 animate-pulse break-inside-avoid"
               aria-hidden
             />
           ))}
         </div>
       ) : (
-        <div id="project-grid" className={GRID_CLASS}>
+        <div 
+          id="project-grid" 
+          className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4"
+        >
           {filtered.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              gridCell={`${index}`}
-            />
+            <div key={project.id} className="break-inside-avoid">
+              <ProjectCard
+                project={project}
+                gridCell={`${index}`}
+              />
+            </div>
           ))}
         </div>
       )}
 
       {!loading && filtered.length === 0 && (
-        <p className="text-writingColor/60 text-center py-12">
+        <p className="text-writingColor/50 text-center py-12">
           no projects in this category yet.
         </p>
       )}
-
-      <p className="text-xs text-writingColor/45 text-center pt-2 font-serif">
-        press{" "}
-        <kbd className="px-1.5 py-0.5 rounded bg-writingColor/5 font-serif text-[11px]">P</kbd>{" "}
-        for pac-man around the grid · coming soon
-      </p>
     </div>
   );
 }

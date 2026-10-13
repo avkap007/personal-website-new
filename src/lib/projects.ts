@@ -20,9 +20,17 @@ export type Project = {
   tags?: string[];
   description?: string;
   image?: string;
+  /** Animated GIF or video version of image */
+  gif?: string;
   link?: string;
   placeholder?: boolean;
   detail?: string;
+  /** Custom action label for hover pill (e.g., "View Presentation") */
+  actionLabel?: string;
+  /** Card size for masonry: "sm" | "md" | "lg" */
+  size?: "sm" | "md" | "lg";
+  /** Award badge to display on card (e.g., "🏆 Swift Student Challenge Winner") */
+  badge?: string;
 };
 
 export const CATEGORIES: {
