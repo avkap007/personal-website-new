@@ -1,7 +1,15 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
-import { Briefcase, Compass, Users } from "lucide-react";
+import { Briefcase, Compass, Users, type LucideIcon } from "lucide-react";
+
+type NoteCard = {
+  label: string;
+  icon: LucideIcon;
+  tilt: number;
+  place: number;
+  text: string;
+};
 
 // Copy for the three home notes lives here.
 const CARDS = [
@@ -28,13 +36,13 @@ const CARDS = [
   },
 ];
 
-function dipFor(width, tilt) {
+function dipFor(width: number, tilt: number) {
   return Math.ceil((width / 2) * Math.sin((Math.abs(tilt) * Math.PI) / 180)) + 2;
 }
 
-function FolderCard({ card }) {
-  const cardRef = useRef(null);
-  const tabRef = useRef(null);
+function FolderCard({ card }: { card: NoteCard }) {
+  const cardRef = useRef<HTMLElement>(null);
+  const tabRef = useRef<HTMLHeadingElement>(null);
   const leftRef = useRef(12);
   const tiltRef = useRef(card.tilt);
   const [left, setLeft] = useState(12);
@@ -42,7 +50,7 @@ function FolderCard({ card }) {
   const [dip, setDip] = useState(8);
   const Icon = card.icon;
 
-  const placeTab = (preferredLeft) => {
+  const placeTab = (preferredLeft: number) => {
     const cardEl = cardRef.current;
     const tabEl = tabRef.current;
     if (!cardEl || !tabEl) return;
@@ -102,7 +110,13 @@ function FolderCard({ card }) {
       >
         <h2
           ref={tabRef}
-          style={{ left, "--tab-tilt": `${tilt}deg`, "--tab-dip": `${dip}px` }}
+          style={
+            {
+              left,
+              "--tab-tilt": `${tilt}deg`,
+              "--tab-dip": `${dip}px`,
+            } as React.CSSProperties
+          }
           className="t-folder-tab absolute bottom-full flex w-max max-w-[calc(100%-1.5rem)] items-center gap-1.5 rounded-t-md border border-b-0 border-dotted border-writingColor/35 bg-[#f0dce4] px-3 pt-1.5 pb-1.5 text-xs font-medium text-writingColor/80 dark:bg-[#1b2233]"
         >
           <Icon className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} aria-hidden />

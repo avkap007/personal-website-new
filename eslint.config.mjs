@@ -11,18 +11,18 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
-  {
+  ...compat.config({
     plugins: ["tailwindcss"],
     rules: {
-      "tailwindcss/no-custom-classname": "off", // Prevents false Tailwind warnings
+      "tailwindcss/no-custom-classname": "off",
       "@next/next/no-html-link-for-pages": "off",
     },
     settings: {
       tailwindcss: {
-        callees: ["cn"], // If using a Tailwind helper function like `cn()`
+        callees: ["cn"],
       },
     },
-  },
+  }),
 ];
 
 export default eslintConfig;

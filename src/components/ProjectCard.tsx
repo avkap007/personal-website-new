@@ -93,7 +93,7 @@ export default function ProjectCard({ project, gridCell }: ProjectCardProps) {
             {hasVideo ? (
               <video
                 ref={videoRef}
-                src={videoSrc}
+                src={videoSrc ?? undefined}
                 muted
                 loop
                 playsInline

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import "@/styles/transitions.css";
 import { themeInitScript } from "@/components/ThemeToggle";
@@ -21,6 +22,7 @@ export default function RootLayout({
       </head>
       <body className="font-serif antialiased text-writingColor bg-primary">
         {children}
+        <Analytics />
       </body>
     </html>
   );
