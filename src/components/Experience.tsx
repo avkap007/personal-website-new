@@ -39,7 +39,7 @@ export default function Experience() {
 
       {/* Subtitle (Hidden on Mobile) */}
       <p className="text-center text-writingColor/70 text-md max-w-2xl mx-auto mb-8 hidden md:block">
-        "A little bit of everything, all at once." <br />
+        {'"A little bit of everything, all at once."'} <br />
         My experiences range from product, development, data to research and community. 🌿
       </p>
 
