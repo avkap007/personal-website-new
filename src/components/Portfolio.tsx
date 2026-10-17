@@ -35,7 +35,7 @@ export default function Portfolio() {
         portfolio
       </h1>
 
-      <p className="text-center text-gray-700 text-md max-w-2xl mx-auto mb-8">
+      <p className="text-center text-writingColor/70 text-md max-w-2xl mx-auto mb-8">
         Here’s a showcase of my design, development, and product skills through some projects I’ve worked on recently. 🏗️
       </p>
 
@@ -51,7 +51,7 @@ export default function Portfolio() {
 
         {/* Empty State */}
         {!loading && projects.length === 0 && (
-          <div className="h-full flex items-center justify-center text-gray-500">
+          <div className="h-full flex items-center justify-center text-writingColor/55">
             No projects found.
           </div>
         )}
@@ -64,7 +64,7 @@ export default function Portfolio() {
 const SkeletonLoader = () => (
   <div className="space-y-6">
     {[1, 2, 3].map((key) => (
-      <div key={key} className="h-48 bg-gray-200 animate-pulse rounded-lg w-full max-w-[600px] mx-auto"></div>
+      <div key={key} className="h-48 bg-writingColor/10 animate-pulse rounded-lg w-full max-w-[600px] mx-auto"></div>
     ))}
   </div>
 );
@@ -118,7 +118,7 @@ const ProjectCard = ({
         ))}
       </div>
 
-      <p className="mt-3 text-gray-700 leading-relaxed text-sm md:text-base">
+      <p className="mt-3 text-writingColor/70 leading-relaxed text-sm md:text-base">
         {project.description}
       </p>
     </div>

@@ -101,7 +101,7 @@ export default function Contact() {
               whileHover={{ scale: 1.1 }}
               disabled={submitted}
               className={`px-4 py-2 rounded-lg text-med font-medium transition-all ${
-                submitted ? "bg-writingColor text-white cursor-not-allowed" : "bg-accent text-darkAccent hover:bg-darkAccent hover:text-white"
+                submitted ? "bg-darkAccent text-white cursor-not-allowed" : "bg-accent text-darkAccent hover:bg-darkAccent hover:text-white"
               }`}
             >
               {submitted ? "sent!" : "send"}
