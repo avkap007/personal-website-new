@@ -9,7 +9,7 @@ export const metadata = {
 export default function ProjectsPage() {
   return (
     <SiteLayout>
-      <section className="w-full max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 py-12 md:py-16">
+      <section className="mx-auto w-full max-w-6xl px-6 pt-16 pb-16 md:px-12">
         <h1 className="text-3xl md:text-4xl font-extrabold font-serif leading-tight">
           projects
           <span className="text-writingColor/35 font-normal"> & </span>

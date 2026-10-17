@@ -19,7 +19,7 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="mx-auto flex w-full max-w-6xl flex-col px-12 py-36 font-serif md:px-20"
+      className="mx-auto flex w-full max-w-6xl flex-col px-6 pt-16 pb-36 font-serif md:px-12"
     >
       <h1 className="text-left text-3xl font-extrabold leading-tight text-writingColor md:text-4xl">
         hi, nice to meet you!

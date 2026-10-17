@@ -9,10 +9,10 @@ export const metadata = {
 export default function WritingsPage() {
   return (
     <SiteLayout>
-      <section className="max-w-2xl mx-auto px-6 md:px-12 py-16 md:py-20">
-        <h1 className="text-3xl md:text-4xl font-extrabold font-serif text-writingColor">writing</h1>
+      <section className="mx-auto w-full max-w-6xl px-6 pt-16 pb-20 md:px-12">
+        <h1 className="text-3xl md:text-4xl font-extrabold font-serif leading-tight text-writingColor">writing</h1>
 
-        <ul className="mt-10 space-y-6">
+        <ul className="mt-10 max-w-2xl space-y-6">
           {WRITINGS.map((w) => (
             <li key={w.id}>
               <a
