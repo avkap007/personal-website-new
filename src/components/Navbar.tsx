@@ -47,8 +47,9 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    closeMenu();
-  }, [pathname, closeMenu]);
+    setIsOpen(false);
+    setIsClosing(false);
+  }, [pathname]);
 
   const menuClass = [
     "t-dropdown md:hidden absolute top-full left-0 w-full bg-primary/95 backdrop-blur-lg border-t border-accent/30 py-4 px-6",
