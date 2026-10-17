@@ -8,7 +8,7 @@ import ThemeToggle from "./ThemeToggle";
 const links = [
   { href: "/", label: "home" },
   { href: "/projects", label: "projects" },
-  { href: "/writings", label: "writings" },
+  { href: "/writings", label: "writing" },
 ] as const;
 
 const CLOSE_MS = 150;

@@ -1,36 +1,5 @@
 [
   {
-    "id": "berst",
-    "title": "BERSting at the Screams",
-    "category": "research",
-    "date": "2025",
-    "detail": "A dataset and benchmark for testing speech recognition with distant, emotional, obstructed, and shouted voices.",
-    "tags": ["ASR", "speech", "dataset"],
-    "link": "https://arxiv.org/abs/2505.00059",
-    "actionLabel": "Read Paper"
-  },
-  {
-    "id": "cujcs",
-    "title": "Canadian Undergraduate Journal of Cognitive Science",
-    "category": "research",
-    "date": "2025",
-    "detail": "As Editor-in-Chief, led Volume 8 from submissions through publication.",
-    "tags": ["editorial", "cogsci"],
-    "link": "https://journals.lib.sfu.ca/index.php/cujcs/issue/view/424",
-    "actionLabel": "View Issue"
-  },
-  {
-    "id": "ai-input-insight",
-    "title": "Teaching AI Literacy with AI Input Insight",
-    "category": "research",
-    "date": "2026",
-    "detail": "A hands-on classroom activity exploring how source material, influence, poisoning, and exclusion shape AI output.",
-    "tags": ["HCI", "LLMs", "education"],
-    "link": "https://ai-input-insight.vercel.app/",
-    "actionLabel": "Try Tool"
-  },
-
-  {
     "id": "settlewell",
     "title": "SettleWell",
     "category": "projects",

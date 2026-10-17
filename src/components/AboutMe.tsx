@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, useMemo } from "react";
 import { BsSoundwave } from "react-icons/bs";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { SiSubstack } from "react-icons/si";
@@ -9,45 +8,6 @@ import { motion } from "framer-motion";
 import FactCards from "./FactCards";
 
 export default function AboutMe() {
-  const words = useMemo(
-    () => [
-      "trying to fit travel & adventure into my schedule ✈️.",
-      "convincing friends to go to big way 🍲.",
-      "picking up yet another hobby 🎭.",
-    ],
-    []
-  );
-
-  const [index, setIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const typingSpeed = 100;
-  const deletingSpeed = 50;
-  const delayBetweenWords = 1500;
-
-  const currentWord = useMemo(() => words[index], [index, words]);
-
-  useEffect(() => {
-    let timeout;
-    if (isDeleting) {
-      timeout = setTimeout(() => {
-        setText((prev) => prev.slice(0, -1));
-        if (text.length === 0) {
-          setIsDeleting(false);
-          setIndex((prev) => (prev + 1) % words.length);
-        }
-      }, deletingSpeed);
-    } else {
-      timeout = setTimeout(() => {
-        setText((prev) => currentWord.slice(0, prev.length + 1));
-        if (text.length === currentWord.length) {
-          setTimeout(() => setIsDeleting(true), delayBetweenWords);
-        }
-      }, typingSpeed);
-    }
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, index, words, currentWord]);
-
   const playPronunciation = () => {
     const audio = new Audio("/avni-pronounciation.mp3");
     audio.play().catch((err) => console.error("Audio play failed:", err));
@@ -88,6 +48,18 @@ export default function AboutMe() {
           </div>
         </div>
 
+        <p className="text-writingColor/55 text-lg flex items-center gap-1">
+          <span className="italic font-normal">pronunciation -</span>
+          <span className="font-semibold text-writingColor">[uhv-knee]</span>
+          <button
+            onClick={playPronunciation}
+            className="text-accent text-xl hover:text-darkAccent transition focus:ring-2 focus:ring-darkAccent focus:outline-none"
+            aria-label="Play pronunciation"
+          >
+            <BsSoundwave />
+          </button>
+        </p>
+
         {/* Socials */}
         <div className="flex items-center gap-6 text-2xl text-writingColor">
           <a
@@ -125,38 +97,29 @@ export default function AboutMe() {
             <SiSubstack />
           </a>
         </div>
+
+        <Image
+          src="/images/avni-sig.png"
+          alt="Avni Kapoor signature"
+          width={180}
+          height={138}
+          className="h-auto w-40"
+        />
       </div>
 
       {/* About Text */}
       <div className="text-left max-w-2xl">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-writingColor">
-          hi, nice to meet you! <br />
-          i'm Avni.{" "}
-          <span className="text-writingColor/55 text-lg flex items-center gap-1">
-            <span className="italic font-normal">pronunciation -</span> 
-            <span className="font-semibold">[uhv-knee]</span>
-            <button
-              onClick={playPronunciation}
-              className="text-accent text-xl hover:text-darkAccent transition focus:ring-2 focus:ring-darkAccent focus:outline-none"
-            >
-              <BsSoundwave />
-            </button>
-          </span>
+        <h1 className="text-3xl md:text-4xl font-extrabold text-writingColor leading-tight">
+          hi, nice to meet you!
+          <br />
+          i&apos;m Avni.
         </h1>
-
         <p className="text-md md:text-lg text-darkAccent mt-2 lowercase">
           <span className="font-bold">[product manager]</span> •{" "}
           <span className="text-writingColor">[developer]</span> •{" "}
           <span className="text-darkAccent">[researcher]</span>
         </p>
 
-        {/* Typing Animation */}
-        <p className="mt-4 max-w-xl text-med text-writingColor/55 leading-relaxed" aria-live="polite">
-          and am always - {text}
-          <span className="animate-blink">|</span>
-        </p>
-
-        {/* Fact Cards */}
         <FactCards />
 
         {/* Standalone Mission Statement */}
@@ -168,7 +131,7 @@ export default function AboutMe() {
 
         {/* Resume Button */}
         <motion.a
-          href="/avni_kapoor_resume.pdf"
+          href="/avni-kapoor-resume.pdf"
           target="_blank"
           whileHover={{ scale: 1.1 }}
           rel="noopener noreferrer"

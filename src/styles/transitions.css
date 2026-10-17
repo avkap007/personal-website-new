@@ -70,14 +70,55 @@
   transition-duration: var(--learn-in);
 }
 
+/* Folder tab: tucked behind its card, pops up on that card only */
+.t-folder-tab {
+  z-index: 0;
+  transform: translateY(calc(100% + var(--tab-dip, 8px))) scale(0.98) rotate(var(--tab-tilt, 0deg));
+  transform-origin: 50% 100%;
+  transition:
+    transform 350ms var(--ease-smooth-out),
+    left 350ms var(--ease-smooth-out);
+  will-change: transform;
+}
+
+.group:hover .t-folder-tab,
+.group:focus-within .t-folder-tab {
+  transform: translateY(calc(var(--tab-dip, 8px) * -1)) scale(1) rotate(var(--tab-tilt, 0deg));
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .t-folder-card {
+    cursor: pointer;
+  }
+}
+
+/* Phones have no hover, so the tabs just sit in place */
+@media (hover: none) {
+  .t-folder-tab {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .t-folder-card.t-card-lift,
+  .t-folder-card.t-card-lift:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .t-card-lift,
   .t-dropdown,
-  .t-learn-arrow {
+  .t-learn-arrow,
+  .t-folder-tab {
     transition: none !important;
   }
 
   .t-card-lift:hover {
     transform: none;
+  }
+
+  .t-folder-tab {
+    transform: none !important;
   }
 }
