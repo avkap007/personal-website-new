@@ -34,6 +34,7 @@ export default function ProjectCard({ project, gridCell }: ProjectCardProps) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [inView, setInView] = useState(false);
+  const [wideScreen, setWideScreen] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!cardRef.current) return;
@@ -47,13 +48,24 @@ export default function ProjectCard({ project, gridCell }: ProjectCardProps) {
   // Determine which media source to use
   const videoSrc = project.gif && isVideo(project.gif) ? project.gif : null;
   const posterSrc = project.image || (project.gif && !isVideo(project.gif) ? project.gif : null);
-  const hasVideo = Boolean(videoSrc);
+  const stillOnMobile = Boolean(project.stillOnMobile && posterSrc && videoSrc);
+  const showVideo = Boolean(videoSrc) && (!stillOnMobile || wideScreen);
   const hasMedia = Boolean(posterSrc || videoSrc);
+
+  // Phone layout matches the nav: still image below `md`, video from 768px up.
+  useEffect(() => {
+    if (!stillOnMobile) return;
+    const mq = window.matchMedia("(min-width: 768px)");
+    const sync = () => setWideScreen(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, [stillOnMobile]);
 
   // Play while the card is on screen, pause once it scrolls away
   useEffect(() => {
     const node = cardRef.current;
-    if (!node || !hasVideo) return;
+    if (!node || !showVideo) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const observer = new IntersectionObserver(
@@ -62,18 +74,24 @@ export default function ProjectCard({ project, gridCell }: ProjectCardProps) {
     );
     observer.observe(node);
     return () => observer.disconnect();
-  }, [hasVideo]);
+  }, [showVideo]);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !hasVideo) return;
+    if (!video || !showVideo) return;
 
-    if (inView) {
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-    }
-  }, [inView, hasVideo]);
+    const tryPlay = () => {
+      if (inView) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    };
+
+    tryPlay();
+    video.addEventListener("loadeddata", tryPlay);
+    return () => video.removeEventListener("loadeddata", tryPlay);
+  }, [inView, showVideo]);
 
   const cardContent = (
     <article
@@ -90,7 +108,7 @@ export default function ProjectCard({ project, gridCell }: ProjectCardProps) {
         {hasMedia ? (
           <>
             {/* Video or GIF/Image */}
-            {hasVideo ? (
+            {showVideo ? (
               <video
                 ref={videoRef}
                 src={videoSrc ?? undefined}

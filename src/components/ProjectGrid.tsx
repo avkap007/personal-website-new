@@ -55,6 +55,24 @@ function scatter(cells: Cell[]): Cell[] {
   return mixed;
 }
 
+/** Small placement tweaks on the mixed grid. Negative moves a card up. */
+const NUDGES: { id: string; by: number }[] = [
+  { id: "pause", by: -2 },
+  { id: "sfu-blueprint", by: -3 },
+  { id: "treehouse", by: -4 },
+  { id: "stormhacks-mvp", by: 2 },
+];
+
+function nudge(cells: Cell[], id: string, by: number) {
+  const index = cells.findIndex(
+    (cell) => cell.kind === "project" && cell.project.id === id
+  );
+  if (index < 0 || by === 0) return;
+  const [item] = cells.splice(index, 1);
+  const next = Math.max(0, Math.min(cells.length, index + by));
+  cells.splice(next, 0, item);
+}
+
 export default function ProjectGrid() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [filter, setFilter] = useState<Filter>("all");
@@ -62,7 +80,10 @@ export default function ProjectGrid() {
 
   useEffect(() => {
     fetch("/data/projects.json")
-      .then((r) => r.json())
+      .then((r) => r.text())
+      .then((text) =>
+        JSON.parse(text.replace(/\/\*[\s\S]*?\*\//g, "")) as Project[]
+      )
       .then((data: Project[]) => setProjects(data))
       .catch(() => setProjects([]))
       .finally(() => setLoading(false));
@@ -90,7 +111,11 @@ export default function ProjectGrid() {
         kind: "project" as const,
         project,
       }));
-    return scatter([...researchCells, ...projectCells]);
+    const mixed = scatter([...researchCells, ...projectCells]);
+    if (filter === "all") {
+      for (const { id, by } of NUDGES) nudge(mixed, id, by);
+    }
+    return mixed;
   }, [projects, filter]);
 
   return (
