@@ -74,20 +74,12 @@
   },
 
   {
-    "id": "van-startup-week",
-    "title": "Van Startup Week",
-    "category": "community",
-    "detail": "volunteer · events",
-    "tags": ["startups", "Vancouver"],
-    "placeholder": true
-  },
-  {
     "id": "sfu-blueprint",
     "title": "SFU Blueprint",
     "category": "community",
     "detail": "tech for social good",
     "tags": ["nonprofit", "SFU"],
-    "placeholder": true
+    "gif": "/sfu-blueprint-header.mp4"
   },
   {
     "id": "treehouse",
@@ -106,7 +98,9 @@
     "category": "community",
     "detail": "student dev community",
     "tags": ["events", "SFU"],
-    "placeholder": true
+    "image": "/trycatch-website-hero.png",
+    "gif": "/trycatch-website-tour.mp4",
+    "stillOnMobile": true
   },
 
   {
@@ -123,12 +117,14 @@
 
   {
     "id": "high-school-pres",
-    "title": "High school presentation",
+    "title": "XD Hacks",
     "category": "presentations",
-    "detail": "outreach · STEM",
-    "tags": ["speaking"],
-    "placeholder": true
+    "detail": "high school talk on STEM paths",
+    "tags": ["hackathon", "workshop"],
+    "image": "/xd-hacks-card-motion.gif",
+    "gif": "/xd-hacks-card-motion.gif"
   },
+  /* Deck later — uncomment when the presentation is ready.
   {
     "id": "design-thinking",
     "title": "Design thinking workshop",
@@ -137,6 +133,7 @@
     "tags": ["design", "facilitation"],
     "placeholder": true
   },
+  */
   {
     "id": "designing-career-wics",
     "title": "WICS, Designing Your Career",

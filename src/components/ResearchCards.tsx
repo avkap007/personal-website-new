@@ -53,9 +53,9 @@ export const researchItems: ResearchItem[] = [
     year: "2026",
     title: "Teaching AI Literacy with AI Input Insight",
     description:
-      "A hands-on classroom activity exploring how source material, influence, poisoning, and exclusion shape AI output.",
+      "A classroom pilot over a semester on students' perspective of AI, and whether they understand what happens behind the scenes.",
     contribution:
-      "I helped design and run a 21-student classroom pilot, then synthesized the outcomes and next steps.",
+      "I led the research independently, from the study design through the tooling. The goal was to learn how students see AI, and whether they understand what happens behind the scenes.",
     accent: "#ffb39f",
     links: [
       {

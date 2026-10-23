@@ -22,6 +22,8 @@ export type Project = {
   image?: string;
   /** Animated GIF or video version of image */
   gif?: string;
+  /** On viewports below `md`, show `image` instead of the video in `gif` */
+  stillOnMobile?: boolean;
   link?: string;
   placeholder?: boolean;
   detail?: string;
